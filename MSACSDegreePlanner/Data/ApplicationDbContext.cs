@@ -14,12 +14,13 @@ namespace MSACSDegreePlanner.Data
         { }
         public DbSet<Degree> Degrees { get; set; }
         public DbSet<Requirement> Requirements { get; set; }
+        public DbSet<DegreePlanTermRequirement> DegreePlanTermRequirements { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Degree>().ToTable("Degrees");
             modelBuilder.Entity<Requirement>().ToTable("Requirements");
-            
+            modelBuilder.Entity<DegreePlanTermRequirement>().ToTable("DegreePlanTermRequirements");
         }
 
 
