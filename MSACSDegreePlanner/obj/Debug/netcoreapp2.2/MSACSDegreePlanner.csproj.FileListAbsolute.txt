@@ -30,3 +30,11 @@ C:\Users\s531367\Documents\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\ne
 C:\Users\s531367\Documents\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.dll
 C:\Users\s531367\Documents\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.pdb
 C:\Users\s531367\Documents\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.csproj.CopyComplete
+C:\Users\S533985\Documents\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.csprojAssemblyReference.cache
+C:\Users\S533985\Documents\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.csproj.CoreCompileInputs.cache
+C:\Users\S533985\Documents\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.RazorAssemblyInfo.cache
+C:\Users\S533985\Documents\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.RazorAssemblyInfo.cs
+C:\Users\S533985\Documents\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.AssemblyInfoInputs.cache
+C:\Users\S533985\Documents\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.AssemblyInfo.cs
+C:\Users\S533985\Documents\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.dll
+C:\Users\S533985\Documents\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.pdb

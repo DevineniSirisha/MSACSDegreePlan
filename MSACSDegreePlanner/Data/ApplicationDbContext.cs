@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MSACSDegreePlanner.Models;
+using Team01Section01Project.Models;
 
 namespace MSACSDegreePlanner.Data
 {
@@ -14,6 +15,8 @@ namespace MSACSDegreePlanner.Data
         { }
         public DbSet<Degree> Degrees { get; set; }
         public DbSet<Requirement> Requirements { get; set; }
+        public DbSet<DegreePlan> DegreePlans { get; set; }
+        public DbSet<Student> Students { get; set; }
         public DbSet<DegreePlanTermRequirement> DegreePlanTermRequirements { get; set; }
         public DbSet<DegreeRequirement> DegreeRequirements { get; set; }
         public DbSet<StudentTerm> StudentTerms { get; set; }
@@ -24,8 +27,10 @@ namespace MSACSDegreePlanner.Data
             modelBuilder.Entity<Degree>().ToTable("Degrees");
             modelBuilder.Entity<Requirement>().ToTable("Requirements");
             modelBuilder.Entity<DegreePlanTermRequirement>().ToTable("DegreePlanTermRequirements");
+            modelBuilder.Entity<DegreePlan>().ToTable("DegreePlans");
             modelBuilder.Entity<DegreeRequirement>().ToTable("DegreeRequirements");
             modelBuilder.Entity<StudentTerm>().ToTable("StudentTerms");
+            modelBuilder.Entity<Student>().ToTable("Students");
         }
 
 
