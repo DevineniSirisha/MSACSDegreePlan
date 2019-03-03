@@ -29,6 +29,8 @@ namespace MSACSDegreePlanner.Data
                 }
                 context.SaveChanges();
             }
+
+
             if (context.Degrees.Any())
             {
                 Console.WriteLine("Degree Plan Term Requirements already exists!");
@@ -60,6 +62,8 @@ namespace MSACSDegreePlanner.Data
                 }
                 context.SaveChanges();
             }
+
+
             if (context.DegreePlanTermRequirements.Any())
             {
                 Console.WriteLine("Degree Plan Term Requirements already exists!");
@@ -78,6 +82,38 @@ namespace MSACSDegreePlanner.Data
                 }
                 context.SaveChanges();
             }
+
+
+            if (context.DegreeRequirements.Any())
+            {
+                Console.WriteLine("Degree Plan Term Requirements already exists!");
+            }
+            else
+            {
+                var degreeRequirements = new DegreeRequirement[]
+                {
+                    new DegreeRequirement{ DegreeRequirementID = 1, DegreeID = 1, RequirementID = 460},
+                    new DegreeRequirement{ DegreeRequirementID = 2, DegreeID = 1, RequirementID = 356},
+                    new DegreeRequirement{ DegreeRequirementID = 3, DegreeID = 1, RequirementID = 542},
+                    new DegreeRequirement{ DegreeRequirementID = 4, DegreeID = 1, RequirementID = 563},
+                    new DegreeRequirement{ DegreeRequirementID = 5, DegreeID = 1, RequirementID = 560},
+                    new DegreeRequirement{ DegreeRequirementID = 6, DegreeID = 1, RequirementID = 555},
+                    new DegreeRequirement{ DegreeRequirementID = 7, DegreeID = 1, RequirementID = 618},
+                    new DegreeRequirement{ DegreeRequirementID = 8, DegreeID = 1, RequirementID = 1},
+                    new DegreeRequirement{ DegreeRequirementID = 9, DegreeID = 1, RequirementID = 664},
+                    new DegreeRequirement{ DegreeRequirementID = 10, DegreeID = 1, RequirementID = 10},
+                    new DegreeRequirement{ DegreeRequirementID = 11, DegreeID = 1, RequirementID = 20},
+                    new DegreeRequirement{ DegreeRequirementID = 12, DegreeID = 1, RequirementID = 691},
+                    new DegreeRequirement{ DegreeRequirementID = 13, DegreeID = 1, RequirementID = 692},
+                };
+                Console.WriteLine($"Inserted {degreeRequirements.Length} new degree requirements");
+                foreach (DegreeRequirement dr in degreeRequirements)
+                {
+                    context.DegreeRequirements.Add(dr);
+                }
+                context.SaveChanges();
+            }
+
         }
     }
 }
