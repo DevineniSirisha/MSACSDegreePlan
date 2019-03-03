@@ -84,6 +84,7 @@ namespace MSACSDegreePlanner.Data
             }
 
 
+            //DegreeRequirement
             if (context.DegreeRequirements.Any())
             {
                 Console.WriteLine("Degree Plan Term Requirements already exists!");
@@ -114,6 +115,29 @@ namespace MSACSDegreePlanner.Data
                 context.SaveChanges();
             }
 
+
+            //StudentTerm
+            if (context.StudentTerms.Any())
+            {
+                Console.WriteLine("Degree Plan Term Requirements already exists!");
+            }
+            else
+            {
+                var studentTerms = new StudentTerm[]
+                {
+                    new StudentTerm{ StudentTermID = 13, StudentID = 521315, Term = 12, TermLabel = "Spring 2018"},
+                    new StudentTerm{ StudentTermID = 14, StudentID = 521315, Term = 13, TermLabel = "Fall 2018"},
+                    new StudentTerm{ StudentTermID = 15, StudentID = 521315, Term = 14, TermLabel = "Spring 2019"},
+                    new StudentTerm{ StudentTermID = 16, StudentID = 521315, Term = 15, TermLabel = "Summer 2018"},
+                    new StudentTerm{ StudentTermID = 17, StudentID = 521315, Term = 16, TermLabel = "Fall 2018"},
+                };
+                Console.WriteLine($"Inserted {studentTerms.Length} new student terms");
+                foreach (StudentTerm st in studentTerms)
+                {
+                    context.StudentTerms.Add(st);
+                }
+                context.SaveChanges();
+            }
         }
     }
 }
