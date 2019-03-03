@@ -20,9 +20,9 @@ namespace MSACSDegreePlanner.Models
         [ForeignKey("RequirementID")]
 
         public Requirement Requirement { get; set; }
-        //[ForeignKey("TermID")]
+        [ForeignKey("TermID")]
 
-        //  public StudentTerm StudentTerm { get; set; }
+         public StudentTerm StudentTerm { get; set; }
 
     }
 }

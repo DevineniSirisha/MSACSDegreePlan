@@ -63,7 +63,46 @@ namespace MSACSDegreePlanner.Data
                 }
                 context.SaveChanges();
             }
+            //Degreeplan
 
+            if (context.DegreePlans.Any())
+            {
+                Console.WriteLine("Degree Plans already exists!");
+            }
+            else
+            {
+                var degreePlans = new DegreePlan[]
+                {
+                    new DegreePlan{DegreePlanID=10,DegreeID=1,StudentID=531367,DegreePlanAbrev="No Summer off",DegreePlanName="No summmer off"}
+
+                };
+                Console.WriteLine($"Inserted {degreePlans.Length} new degree plan term requirements");
+                foreach (DegreePlan d in degreePlans)
+                {
+                    context.DegreePlans.Add(d);
+                }
+                context.SaveChanges();
+            }
+
+            //Student
+            if (context.DegreePlans.Any())
+            {
+                Console.WriteLine("Degree Plans already exists!");
+            }
+            else
+            {
+                var students = new Student[]
+                {
+                    new Student{StudentID=531367,FirstName="Sai Sirisha",LastName="Devineni",Snumber="s531367",_919number=562438}
+
+                };
+                Console.WriteLine($"Inserted {students.Length} new degree plan term requirements");
+                foreach (Student d in students)
+                {
+                    context.Students.Add(d);
+                }
+                context.SaveChanges();
+            }
 
             //DegreeRequirement
             if (context.DegreeRequirements.Any())
@@ -139,28 +178,7 @@ namespace MSACSDegreePlanner.Data
                 context.SaveChanges();
             }
 
-            //Degreeplan
-
-            if (context.DegreePlans.Any())
-            {
-                Console.WriteLine("Degree Plans already exists!");
-            }
-            else
-            {
-                var degreePlans = new DegreePlan[]
-                {
-                    new DegreePlan{DegreePlanID=10,DegreeID=1,StudentID=531367,DegreePlanAbrev="No Summer off",DegreePlanName="No summmer off"}
-                   
-                };
-                Console.WriteLine($"Inserted {degreePlans.Length} new degree plan term requirements");
-                foreach (DegreePlan d in degreePlans)
-                {
-                    context.DegreePlans.Add(d);
-                }
-                context.SaveChanges();
-            }
-
-
+          
         }
     }
 }
