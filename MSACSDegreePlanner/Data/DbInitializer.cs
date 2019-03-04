@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MSACSDegreePlanner;
 using MSACSDegreePlanner.Data;
 using MSACSDegreePlanner.Models;
+using Team01Section01Project.Models;
 
 namespace MSACSDegreePlanner.Data
 {
@@ -14,7 +15,7 @@ namespace MSACSDegreePlanner.Data
         {
             if (context.Degrees.Any())
             {
-                Console.WriteLine("Degree Plan Term Requirements already exists!");
+                Console.WriteLine("Degrees already exists!");
             }
             else {
 
@@ -29,9 +30,11 @@ namespace MSACSDegreePlanner.Data
                 }
                 context.SaveChanges();
             }
-            if (context.Degrees.Any())
+
+
+            if (context.Requirements.Any())
             {
-                Console.WriteLine("Degree Plan Term Requirements already exists!");
+                Console.WriteLine("Requirements already exists!");
             }
             else
             {
@@ -60,7 +63,122 @@ namespace MSACSDegreePlanner.Data
                 }
                 context.SaveChanges();
             }
+            //Degreeplan
 
+            if (context.DegreePlans.Any())
+            {
+                Console.WriteLine("Degree Plans already exists!");
+            }
+            else
+            {
+                var degreePlans = new DegreePlan[]
+                {
+                    new DegreePlan{DegreePlanID=10,DegreeID=1,StudentID=531367,DegreePlanAbrev="No Summer off",DegreePlanName="No summmer off"}
+
+                };
+                Console.WriteLine($"Inserted {degreePlans.Length} new degree plan term requirements");
+                foreach (DegreePlan d in degreePlans)
+                {
+                    context.DegreePlans.Add(d);
+                }
+                context.SaveChanges();
+            }
+
+            //Student
+            if (context.DegreePlans.Any())
+            {
+                Console.WriteLine("Degree Plans already exists!");
+            }
+            else
+            {
+                var students = new Student[]
+                {
+                    new Student{StudentID=531367,FirstName="Sai Sirisha",LastName="Devineni",Snumber="s531367",_919number=562438}
+
+                };
+                Console.WriteLine($"Inserted {students.Length} new degree plan term requirements");
+                foreach (Student d in students)
+                {
+                    context.Students.Add(d);
+                }
+                context.SaveChanges();
+            }
+
+            //DegreeRequirement
+            if (context.DegreeRequirements.Any())
+            {
+                Console.WriteLine("Degree Requirements already exists!");
+            }
+            else
+            {
+                var degreeRequirements = new DegreeRequirement[]
+                {
+                    new DegreeRequirement{ DegreeRequirementID = 1, DegreeID = 1, RequirementID = 460},
+                    new DegreeRequirement{ DegreeRequirementID = 2, DegreeID = 1, RequirementID = 356},
+                    new DegreeRequirement{ DegreeRequirementID = 3, DegreeID = 1, RequirementID = 542},
+                    new DegreeRequirement{ DegreeRequirementID = 4, DegreeID = 1, RequirementID = 563},
+                    new DegreeRequirement{ DegreeRequirementID = 5, DegreeID = 1, RequirementID = 560},
+                    new DegreeRequirement{ DegreeRequirementID = 6, DegreeID = 1, RequirementID = 555},
+                    new DegreeRequirement{ DegreeRequirementID = 7, DegreeID = 1, RequirementID = 618},
+                    new DegreeRequirement{ DegreeRequirementID = 8, DegreeID = 1, RequirementID = 1},
+                    new DegreeRequirement{ DegreeRequirementID = 9, DegreeID = 1, RequirementID = 664},
+                    new DegreeRequirement{ DegreeRequirementID = 10, DegreeID = 1, RequirementID = 10},
+                    new DegreeRequirement{ DegreeRequirementID = 11, DegreeID = 1, RequirementID = 20},
+                    new DegreeRequirement{ DegreeRequirementID = 12, DegreeID = 1, RequirementID = 691},
+                    new DegreeRequirement{ DegreeRequirementID = 13, DegreeID = 1, RequirementID = 692},
+                };
+                Console.WriteLine($"Inserted {degreeRequirements.Length} new degree requirements");
+                foreach (DegreeRequirement dr in degreeRequirements)
+                {
+                    context.DegreeRequirements.Add(dr);
+                }
+                context.SaveChanges();
+            }
+
+
+            //StudentTerm
+            if (context.StudentTerms.Any())
+            {
+                Console.WriteLine("StudentTerm Requirements already exists!");
+            }
+            else
+            {
+                var studentTerms = new StudentTerm[]
+                {
+                    new StudentTerm{ StudentTermID = 13, StudentID = 521315, Term = 12, TermLabel = "Spring 2018"},
+                    new StudentTerm{ StudentTermID = 14, StudentID = 521315, Term = 13, TermLabel = "Fall 2018"},
+                    new StudentTerm{ StudentTermID = 15, StudentID = 521315, Term = 14, TermLabel = "Spring 2019"},
+                    new StudentTerm{ StudentTermID = 16, StudentID = 521315, Term = 15, TermLabel = "Summer 2018"},
+                    new StudentTerm{ StudentTermID = 17, StudentID = 521315, Term = 16, TermLabel = "Fall 2018"},
+                };
+                Console.WriteLine($"Inserted {studentTerms.Length} new student terms");
+                foreach (StudentTerm st in studentTerms)
+                {
+                    context.StudentTerms.Add(st);
+                }
+                context.SaveChanges();
+            }
+
+            if (context.DegreePlanTermRequirements.Any())
+            {
+                Console.WriteLine("Degree Plan Term Requirements already exists!");
+            }
+            else
+            {
+                var degreePlanTermRequirements = new DegreePlanTermRequirement[]
+                {
+                    new DegreePlanTermRequirement{ DegreePlanTermRequirementID =1,DegreePlanID=10,TermID=1,RequirementID=460},
+                     new DegreePlanTermRequirement{ DegreePlanTermRequirementID =2,DegreePlanID=10,TermID=1,RequirementID=356}
+                };
+                Console.WriteLine($"Inserted {degreePlanTermRequirements.Length} new degree plan term requirements");
+                foreach (DegreePlanTermRequirement d in degreePlanTermRequirements)
+                {
+                    context.DegreePlanTermRequirements.Add(d);
+                }
+                context.SaveChanges();
+            }
+
+          
         }
     }
 }
