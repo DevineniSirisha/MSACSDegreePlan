@@ -93,8 +93,8 @@ namespace MSACSDegreePlanner.Data
             {
                 var students = new Student[]
                 {
-                    new Student{StudentID=531367,FirstName="Sai Sirisha",LastName="Devineni",Snumber="s531367",_919number=562438}
-
+                   new Student{StudentID=531367,FirstName="Sai Sirisha",LastName="Devineni",Snumber="s531367",_919number=562438}
+                    //new Student{StudentID=533900,FirstName="Karun",LastName="Bourishetty",Snumber="s533900",_919number=568896}
                 };
                 Console.WriteLine($"Inserted {students.Length} new degree plan term requirements");
                 foreach (Student d in students)
