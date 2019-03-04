@@ -13,6 +13,9 @@ namespace MSACSDegreePlanner.Models
         public int DegreeID { get; set; }
         public int RequirementID { get; set; }
 
+        public Degree Degree { get; set; }
+        public Requirement Requirement { get; set; }
+
         //public Degree Degree { get; set; }
         //[ForeignKey("DegreeID")]
 
