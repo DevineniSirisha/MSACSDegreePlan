@@ -12072,23 +12072,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\S533985\\.nuget\\packages\\": {},
+    "C:\\Users\\s521315\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\S533985\\Documents\\44663\\MSACSDegreePlan\\MSACSDegreePlanner\\MSACSDegreePlanner.csproj",
+      "projectUniqueName": "C:\\44663\\MSACSDegreePlan\\MSACSDegreePlanner\\MSACSDegreePlanner.csproj",
       "projectName": "MSACSDegreePlanner",
-      "projectPath": "C:\\Users\\S533985\\Documents\\44663\\MSACSDegreePlan\\MSACSDegreePlanner\\MSACSDegreePlanner.csproj",
-      "packagesPath": "C:\\Users\\S533985\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\S533985\\Documents\\44663\\MSACSDegreePlan\\MSACSDegreePlanner\\obj\\",
+      "projectPath": "C:\\44663\\MSACSDegreePlan\\MSACSDegreePlanner\\MSACSDegreePlanner.csproj",
+      "packagesPath": "C:\\Users\\s521315\\.nuget\\packages\\",
+      "outputPath": "C:\\44663\\MSACSDegreePlan\\MSACSDegreePlanner\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\S533985\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\s521315\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
