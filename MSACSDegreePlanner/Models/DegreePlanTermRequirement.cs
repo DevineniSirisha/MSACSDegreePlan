@@ -9,6 +9,7 @@ namespace MSACSDegreePlanner.Models
 {
     public class DegreePlanTermRequirement
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DegreePlanTermRequirementID { get; set; }
         public int DegreePlanID { get; set; }
         public int TermID { get; set; }
@@ -21,8 +22,7 @@ namespace MSACSDegreePlanner.Models
 
         public Requirement Requirement { get; set; }
         [ForeignKey("TermID")]
-
-         public StudentTerm StudentTerm { get; set; }
+        public StudentTerm StudentTerm { get; set; }
 
     }
 }

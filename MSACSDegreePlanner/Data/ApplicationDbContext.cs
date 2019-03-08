@@ -24,13 +24,13 @@ namespace MSACSDegreePlanner.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Degree>().ToTable("Degrees");
-            modelBuilder.Entity<Requirement>().ToTable("Requirements");
-            modelBuilder.Entity<DegreePlanTermRequirement>().ToTable("DegreePlanTermRequirements");
-            modelBuilder.Entity<DegreePlan>().ToTable("DegreePlans");
-            modelBuilder.Entity<DegreeRequirement>().ToTable("DegreeRequirements");
-            modelBuilder.Entity<StudentTerm>().ToTable("StudentTerms");
-            modelBuilder.Entity<Student>().ToTable("Students");
+            modelBuilder.Entity<Degree>().ToTable("Degree");
+            modelBuilder.Entity<Requirement>().ToTable("Requirement");
+            modelBuilder.Entity<DegreePlanTermRequirement>().ToTable("DegreePlanTermRequirement");
+            modelBuilder.Entity<DegreePlan>().ToTable("DegreePlan");
+            modelBuilder.Entity<DegreeRequirement>().ToTable("DegreeRequirement");
+            modelBuilder.Entity<StudentTerm>().ToTable("StudentTerm");
+            modelBuilder.Entity<Student>().ToTable("Student");
         }
 
 

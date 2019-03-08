@@ -9,6 +9,7 @@ namespace MSACSDegreePlanner.Models
 {
     public class DegreeRequirement
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DegreeRequirementID { get; set; }
         public int DegreeID { get; set; }
         public int RequirementID { get; set; }
