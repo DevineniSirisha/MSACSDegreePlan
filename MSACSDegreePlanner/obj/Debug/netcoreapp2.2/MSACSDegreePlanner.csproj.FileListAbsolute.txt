@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\masters\C#.net\MSACSDegreePlan\MSACSDegreePlanner\bin\Debug\netcoreapp2.2\MSACSDegreePlanner.deps.json
 C:\masters\C#.net\MSACSDegreePlan\MSACSDegreePlanner\bin\Debug\netcoreapp2.2\MSACSDegreePlanner.runtimeconfig.json
 C:\masters\C#.net\MSACSDegreePlan\MSACSDegreePlanner\bin\Debug\netcoreapp2.2\MSACSDegreePlanner.runtimeconfig.dev.json
@@ -30,3 +31,36 @@ C:\masters\C#.net\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSA
 C:\masters\C#.net\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.pdb
 C:\masters\C#.net\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.csproj.CopyComplete
 C:\masters\C#.net\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.csprojAssemblyReference.cache
+=======
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\bin\Debug\netcoreapp2.2\MSACSDegreePlanner.deps.json
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\bin\Debug\netcoreapp2.2\MSACSDegreePlanner.runtimeconfig.json
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\bin\Debug\netcoreapp2.2\MSACSDegreePlanner.runtimeconfig.dev.json
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\bin\Debug\netcoreapp2.2\MSACSDegreePlanner.dll
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\bin\Debug\netcoreapp2.2\MSACSDegreePlanner.pdb
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\bin\Debug\netcoreapp2.2\MSACSDegreePlanner.Views.dll
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\bin\Debug\netcoreapp2.2\MSACSDegreePlanner.Views.pdb
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.csproj.CoreCompileInputs.cache
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.RazorAssemblyInfo.cache
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.RazorAssemblyInfo.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.AssemblyInfoInputs.cache
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.AssemblyInfo.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.TagHelpers.input.cache
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.TagHelpers.output.cache
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.RazorCoreGenerate.cache
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.RazorTargetAssemblyInfo.cache
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.RazorTargetAssemblyInfo.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.Views.pdb
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.dll
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.pdb
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.csproj.CopyComplete
+>>>>>>> 9d121b69b6a9a5e11b3f28d510d081e3edfba080
