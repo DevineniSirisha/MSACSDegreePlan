@@ -5,7 +5,6 @@ C:\44663\MSACSDegreePlan\MSACSDegreePlanner\bin\Debug\netcoreapp2.2\MSACSDegreeP
 C:\44663\MSACSDegreePlan\MSACSDegreePlanner\bin\Debug\netcoreapp2.2\MSACSDegreePlanner.pdb
 C:\44663\MSACSDegreePlan\MSACSDegreePlanner\bin\Debug\netcoreapp2.2\MSACSDegreePlanner.Views.dll
 C:\44663\MSACSDegreePlan\MSACSDegreePlanner\bin\Debug\netcoreapp2.2\MSACSDegreePlanner.Views.pdb
-C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.csprojAssemblyReference.cache
 C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.csproj.CoreCompileInputs.cache
 C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.RazorAssemblyInfo.cache
 C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\MSACSDegreePlanner.RazorAssemblyInfo.cs
