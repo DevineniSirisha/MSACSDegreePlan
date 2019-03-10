@@ -7,6 +7,7 @@ namespace Team01Section01Project.Models
 {
     public class DegreePlan
     {
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DegreePlanID { get; set; }
         public int DegreeID { get; set; }

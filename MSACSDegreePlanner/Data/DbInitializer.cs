@@ -17,7 +17,8 @@ namespace MSACSDegreePlanner.Data
             {
                 Console.WriteLine("Degrees already exists!");
             }
-            else {
+            else
+            {
 
                 var degrees = new Degree[]
                {
@@ -73,7 +74,14 @@ namespace MSACSDegreePlanner.Data
             {
                 var degreePlans = new DegreePlan[]
                 {
-                    new DegreePlan{DegreePlanID=10,DegreeID=1,StudentID=531367,DegreePlanAbrev="No Summer off",DegreePlanName="No summmer off"}
+                    new DegreePlan{DegreePlanID=10,DegreeID=1,StudentID=531367,DegreePlanAbrev="No summer off",DegreePlanName="No summer off"},
+                    new DegreePlan{DegreePlanID=11,DegreeID=1,StudentID=531367,DegreePlanAbrev="Summer Off",DegreePlanName="summer off"},
+                    new DegreePlan{DegreePlanID=30,DegreeID=1,StudentID=533900,DegreePlanAbrev="No summer off",DegreePlanName="No summer off"},
+                    new DegreePlan{DegreePlanID=31,DegreeID=1,StudentID=533900,DegreePlanAbrev="Summer Off",DegreePlanName="summer off"},
+                    new DegreePlan{DegreePlanID=12,DegreeID=1,StudentID=533985,DegreePlanAbrev="No summer off",DegreePlanName="No summer off"},
+                    new DegreePlan{DegreePlanID=13,DegreeID=1,StudentID=533985,DegreePlanAbrev="Summer Off",DegreePlanName="summer off"},
+                    new DegreePlan{DegreePlanID=14,DegreeID=1,StudentID=521315,DegreePlanAbrev="No summer off",DegreePlanName="No summer off"},
+                    new DegreePlan{DegreePlanID=15,DegreeID=1,StudentID=521315,DegreePlanAbrev="Summer Off",DegreePlanName="summer off"}
 
                 };
                 Console.WriteLine($"Inserted {degreePlans.Length} new degree plan term requirements");
@@ -85,7 +93,7 @@ namespace MSACSDegreePlanner.Data
             }
 
             //Student
-            if (context.DegreePlans.Any())
+            if (context.Students.Any())
             {
                 Console.WriteLine("Degree Plans already exists!");
             }
@@ -93,9 +101,11 @@ namespace MSACSDegreePlanner.Data
             {
                 var students = new Student[]
                 {
-                   new Student{StudentID=531367,FirstName="Sai Sirisha",LastName="Devineni",Snumber="s531367",_919number=562438}
-                    //new Student{StudentID=533900,FirstName="Karun",LastName="Bourishetty",Snumber="s533900",_919number=568896}
-                };
+                    new Student{StudentID=531367,LastName="Devineni",FirstName="Sai Sirisha",Snumber="s531367",_919number=562438},
+                    new Student{StudentID=533985,LastName="Marasini",FirstName="Dristi",Snumber="s533985",_919number=569178},
+                    new Student{StudentID=521315,LastName="Joshi",FirstName="Aawaj",Snumber="s521315",_919number=480684},
+                    new Student{StudentID=533900,LastName="Bourishetty",FirstName="Karun ",Snumber="s533900",_919number=568896}				
+				};
                 Console.WriteLine($"Inserted {students.Length} new degree plan term requirements");
                 foreach (Student d in students)
                 {
@@ -178,7 +188,7 @@ namespace MSACSDegreePlanner.Data
                 context.SaveChanges();
             }
 
-          
+
         }
     }
 }

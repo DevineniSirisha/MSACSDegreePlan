@@ -44,12 +44,6 @@ namespace MSACSDegreePlanner.Migrations
 
                     b.HasKey("DegreePlanTermRequirementID");
 
-                    b.HasIndex("DegreePlanID");
-
-                    b.HasIndex("RequirementID");
-
-                    b.HasIndex("TermID");
-
                     b.ToTable("DegreePlanTermRequirement");
                 });
 
@@ -295,24 +289,6 @@ namespace MSACSDegreePlanner.Migrations
                     b.HasKey("StudentID");
 
                     b.ToTable("Student");
-                });
-
-            modelBuilder.Entity("MSACSDegreePlanner.Models.DegreePlanTermRequirement", b =>
-                {
-                    b.HasOne("Team01Section01Project.Models.DegreePlan", "DegreePlan")
-                        .WithMany()
-                        .HasForeignKey("DegreePlanID")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("MSACSDegreePlanner.Models.Requirement", "Requirement")
-                        .WithMany()
-                        .HasForeignKey("RequirementID")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("MSACSDegreePlanner.Models.StudentTerm", "StudentTerm")
-                        .WithMany()
-                        .HasForeignKey("TermID")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("MSACSDegreePlanner.Models.DegreeRequirement", b =>
