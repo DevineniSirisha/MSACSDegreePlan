@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using MSACSDegreePlanner;
 using MSACSDegreePlanner.Data;
 using MSACSDegreePlanner.Models;
-using Team01Section01Project.Models;
+using MSACSDegreePlanner.Models;
 
 namespace MSACSDegreePlanner.Data
 {
@@ -22,7 +22,7 @@ namespace MSACSDegreePlanner.Data
 
                 var degrees = new Degree[]
                {
-                    new Degree{ DegreeID =1,DegreeAbbrev="ACS+2",DegreePlanName="MS ACS +2"}
+                    new Degree{ DegreeId =1,DegreeAbbrev="ACS+2",DegreePlanName="MS ACS +2"}
                };
                 Console.WriteLine($"Inserted {degrees.Length} new degrees");
                 foreach (Degree d in degrees)
@@ -42,19 +42,19 @@ namespace MSACSDegreePlanner.Data
 
                 var requirements = new Requirement[]
                {
-                   new Requirement{RequirementID=460,RequirementAbbrev="DB",RequirementName="44-460 Database"} ,
-                   new Requirement { RequirementID = 356, RequirementAbbrev = "NF", RequirementName = "44-356 Network Fundamemtals" },
-                   new Requirement { RequirementID = 542, RequirementAbbrev = "OOP", RequirementName = "44-542 OOP with Java" },
-                   new Requirement { RequirementID = 563, RequirementAbbrev = "Web apps", RequirementName = "44-563 Web apps" },
-                   new Requirement { RequirementID = 560, RequirementAbbrev = "ADB", RequirementName = "44-560 ADB" },
-                   new Requirement { RequirementID = 555, RequirementAbbrev = "NS", RequirementName = "44-555 Network Security" },
-                   new Requirement { RequirementID = 618, RequirementAbbrev = "PM", RequirementName = "44-618 PM" },
-                   new Requirement { RequirementID = 1, RequirementAbbrev = "Mobile", RequirementName = "44-643 or 44-644" },
-                   new Requirement { RequirementID = 664, RequirementAbbrev = "UX", RequirementName = "44-664 UX" },
-                   new Requirement { RequirementID = 10, RequirementAbbrev = "E1", RequirementName = "Elective 1" },
-                   new Requirement { RequirementID = 20, RequirementAbbrev = "E2", RequirementName = "Elective 2" },
-                   new Requirement { RequirementID = 691, RequirementAbbrev = "GDP1", RequirementName = "GDP1" },
-                   new Requirement { RequirementID = 692, RequirementAbbrev = "GDP2", RequirementName = "GDP2" }
+                   new Requirement{RequirementId=460,RequirementAbbrev="DB",RequirementName="44-460 Database"} ,
+                   new Requirement { RequirementId = 356, RequirementAbbrev = "NF", RequirementName = "44-356 Network Fundamemtals" },
+                   new Requirement { RequirementId = 542, RequirementAbbrev = "OOP", RequirementName = "44-542 OOP with Java" },
+                   new Requirement { RequirementId = 563, RequirementAbbrev = "Web apps", RequirementName = "44-563 Web apps" },
+                   new Requirement { RequirementId = 560, RequirementAbbrev = "ADB", RequirementName = "44-560 ADB" },
+                   new Requirement { RequirementId = 555, RequirementAbbrev = "NS", RequirementName = "44-555 Network Security" },
+                   new Requirement { RequirementId = 618, RequirementAbbrev = "PM", RequirementName = "44-618 PM" },
+                   new Requirement { RequirementId = 1, RequirementAbbrev = "Mobile", RequirementName = "44-643 or 44-644" },
+                   new Requirement { RequirementId = 664, RequirementAbbrev = "UX", RequirementName = "44-664 UX" },
+                   new Requirement { RequirementId = 10, RequirementAbbrev = "E1", RequirementName = "Elective 1" },
+                   new Requirement { RequirementId = 20, RequirementAbbrev = "E2", RequirementName = "Elective 2" },
+                   new Requirement { RequirementId = 691, RequirementAbbrev = "GDP1", RequirementName = "GDP1" },
+                   new Requirement { RequirementId = 692, RequirementAbbrev = "GDP2", RequirementName = "GDP2" }
 
                };
                 Console.WriteLine($"Inserted {requirements.Length} new requirements");
@@ -74,14 +74,14 @@ namespace MSACSDegreePlanner.Data
             {
                 var degreePlans = new DegreePlan[]
                 {
-                    new DegreePlan{DegreePlanID=10,DegreeID=1,StudentID=531367,DegreePlanAbrev="No summer off",DegreePlanName="No summer off"},
-                    new DegreePlan{DegreePlanID=11,DegreeID=1,StudentID=531367,DegreePlanAbrev="Summer Off",DegreePlanName="summer off"},
-                    new DegreePlan{DegreePlanID=30,DegreeID=1,StudentID=533900,DegreePlanAbrev="No summer off",DegreePlanName="No summer off"},
-                    new DegreePlan{DegreePlanID=31,DegreeID=1,StudentID=533900,DegreePlanAbrev="Summer Off",DegreePlanName="summer off"},
-                    new DegreePlan{DegreePlanID=12,DegreeID=1,StudentID=533985,DegreePlanAbrev="No summer off",DegreePlanName="No summer off"},
-                    new DegreePlan{DegreePlanID=13,DegreeID=1,StudentID=533985,DegreePlanAbrev="Summer Off",DegreePlanName="summer off"},
-                    new DegreePlan{DegreePlanID=14,DegreeID=1,StudentID=521315,DegreePlanAbrev="No summer off",DegreePlanName="No summer off"},
-                    new DegreePlan{DegreePlanID=15,DegreeID=1,StudentID=521315,DegreePlanAbrev="Summer Off",DegreePlanName="summer off"}
+                    new DegreePlan{DegreePlanId=10,DegreeId=1,StudentId=531367,DegreePlanAbrev="No summer off",DegreePlanName="No summer off"},
+                    new DegreePlan{DegreePlanId=11,DegreeId=1,StudentId=531367,DegreePlanAbrev="Summer Off",DegreePlanName="summer off"},
+                    new DegreePlan{DegreePlanId=30,DegreeId=1,StudentId=533900,DegreePlanAbrev="No summer off",DegreePlanName="No summer off"},
+                    new DegreePlan{DegreePlanId=31,DegreeId=1,StudentId=533900,DegreePlanAbrev="Summer Off",DegreePlanName="summer off"},
+                    new DegreePlan{DegreePlanId=12,DegreeId=1,StudentId=533985,DegreePlanAbrev="No summer off",DegreePlanName="No summer off"},
+                    new DegreePlan{DegreePlanId=13,DegreeId=1,StudentId=533985,DegreePlanAbrev="Summer Off",DegreePlanName="summer off"},
+                    new DegreePlan{DegreePlanId=14,DegreeId=1,StudentId=521315,DegreePlanAbrev="No summer off",DegreePlanName="No summer off"},
+                    new DegreePlan{DegreePlanId=15,DegreeId=1,StudentId=521315,DegreePlanAbrev="Summer Off",DegreePlanName="summer off"}
 
                 };
                 Console.WriteLine($"Inserted {degreePlans.Length} new degree plan term requirements");
@@ -101,10 +101,10 @@ namespace MSACSDegreePlanner.Data
             {
                 var students = new Student[]
                 {
-                    new Student{StudentID=531367,LastName="Devineni",FirstName="Sai Sirisha",Snumber="s531367",_919number=562438},
-                    new Student{StudentID=533985,LastName="Marasini",FirstName="Dristi",Snumber="s533985",_919number=569178},
-                    new Student{StudentID=521315,LastName="Joshi",FirstName="Aawaj",Snumber="s521315",_919number=480684},
-                    new Student{StudentID=533900,LastName="Bourishetty",FirstName="Karun ",Snumber="s533900",_919number=568896}				
+                    new Student{StudentId=531367,LastName="Devineni",FirstName="Sai Sirisha",Snumber="s531367",_919number=562438},
+                    new Student{StudentId=533985,LastName="Marasini",FirstName="Dristi",Snumber="s533985",_919number=569178},
+                    new Student{StudentId=521315,LastName="Joshi",FirstName="Aawaj",Snumber="s521315",_919number=480684},
+                    new Student{StudentId=533900,LastName="Bourishetty",FirstName="Karun ",Snumber="s533900",_919number=568896}				
 				};
                 Console.WriteLine($"Inserted {students.Length} new degree plan term requirements");
                 foreach (Student d in students)
@@ -123,19 +123,19 @@ namespace MSACSDegreePlanner.Data
             {
                 var degreeRequirements = new DegreeRequirement[]
                 {
-                    new DegreeRequirement{ DegreeRequirementID = 1, DegreeID = 1, RequirementID = 460},
-                    new DegreeRequirement{ DegreeRequirementID = 2, DegreeID = 1, RequirementID = 356},
-                    new DegreeRequirement{ DegreeRequirementID = 3, DegreeID = 1, RequirementID = 542},
-                    new DegreeRequirement{ DegreeRequirementID = 4, DegreeID = 1, RequirementID = 563},
-                    new DegreeRequirement{ DegreeRequirementID = 5, DegreeID = 1, RequirementID = 560},
-                    new DegreeRequirement{ DegreeRequirementID = 6, DegreeID = 1, RequirementID = 555},
-                    new DegreeRequirement{ DegreeRequirementID = 7, DegreeID = 1, RequirementID = 618},
-                    new DegreeRequirement{ DegreeRequirementID = 8, DegreeID = 1, RequirementID = 1},
-                    new DegreeRequirement{ DegreeRequirementID = 9, DegreeID = 1, RequirementID = 664},
-                    new DegreeRequirement{ DegreeRequirementID = 10, DegreeID = 1, RequirementID = 10},
-                    new DegreeRequirement{ DegreeRequirementID = 11, DegreeID = 1, RequirementID = 20},
-                    new DegreeRequirement{ DegreeRequirementID = 12, DegreeID = 1, RequirementID = 691},
-                    new DegreeRequirement{ DegreeRequirementID = 13, DegreeID = 1, RequirementID = 692},
+                    new DegreeRequirement{ DegreeRequirementId = 1, DegreeId = 1, RequirementId = 460},
+                    new DegreeRequirement{ DegreeRequirementId = 2, DegreeId = 1, RequirementId = 356},
+                    new DegreeRequirement{ DegreeRequirementId = 3, DegreeId = 1, RequirementId = 542},
+                    new DegreeRequirement{ DegreeRequirementId = 4, DegreeId = 1, RequirementId = 563},
+                    new DegreeRequirement{ DegreeRequirementId = 5, DegreeId = 1, RequirementId = 560},
+                    new DegreeRequirement{ DegreeRequirementId = 6, DegreeId = 1, RequirementId = 555},
+                    new DegreeRequirement{ DegreeRequirementId = 7, DegreeId = 1, RequirementId = 618},
+                    new DegreeRequirement{ DegreeRequirementId = 8, DegreeId = 1, RequirementId = 1},
+                    new DegreeRequirement{ DegreeRequirementId = 9, DegreeId = 1, RequirementId = 664},
+                    new DegreeRequirement{ DegreeRequirementId = 10, DegreeId = 1, RequirementId = 10},
+                    new DegreeRequirement{ DegreeRequirementId = 11, DegreeId = 1, RequirementId = 20},
+                    new DegreeRequirement{ DegreeRequirementId = 12, DegreeId = 1, RequirementId = 691},
+                    new DegreeRequirement{ DegreeRequirementId = 13, DegreeId = 1, RequirementId = 692},
                 };
                 Console.WriteLine($"Inserted {degreeRequirements.Length} new degree requirements");
                 foreach (DegreeRequirement dr in degreeRequirements)
@@ -155,11 +155,11 @@ namespace MSACSDegreePlanner.Data
             {
                 var studentTerms = new StudentTerm[]
                 {
-                    new StudentTerm{ StudentTermID = 13, StudentID = 521315, Term = 12, TermLabel = "Spring 2018"},
-                    new StudentTerm{ StudentTermID = 14, StudentID = 521315, Term = 13, TermLabel = "Fall 2018"},
-                    new StudentTerm{ StudentTermID = 15, StudentID = 521315, Term = 14, TermLabel = "Spring 2019"},
-                    new StudentTerm{ StudentTermID = 16, StudentID = 521315, Term = 15, TermLabel = "Summer 2018"},
-                    new StudentTerm{ StudentTermID = 17, StudentID = 521315, Term = 16, TermLabel = "Fall 2018"},
+                    new StudentTerm{ StudentTermId = 13, StudentId = 521315, Term = 12, TermLabel = "Spring 2018"},
+                    new StudentTerm{ StudentTermId = 14, StudentId = 521315, Term = 13, TermLabel = "Fall 2018"},
+                    new StudentTerm{ StudentTermId = 15, StudentId = 521315, Term = 14, TermLabel = "Spring 2019"},
+                    new StudentTerm{ StudentTermId = 16, StudentId = 521315, Term = 15, TermLabel = "Summer 2018"},
+                    new StudentTerm{ StudentTermId = 17, StudentId = 521315, Term = 16, TermLabel = "Fall 2018"},
                 };
                 Console.WriteLine($"Inserted {studentTerms.Length} new student terms");
                 foreach (StudentTerm st in studentTerms)
@@ -177,8 +177,8 @@ namespace MSACSDegreePlanner.Data
             {
                 var degreePlanTermRequirements = new DegreePlanTermRequirement[]
                 {
-                    new DegreePlanTermRequirement{ DegreePlanTermRequirementID =1,DegreePlanID=10,TermID=1,RequirementID=460},
-                     new DegreePlanTermRequirement{ DegreePlanTermRequirementID =2,DegreePlanID=10,TermID=1,RequirementID=356}
+                    new DegreePlanTermRequirement{ DegreePlanTermRequirementId =1,DegreePlanId=10,TermId=1,RequirementId=460},
+                     new DegreePlanTermRequirement{ DegreePlanTermRequirementId =2,DegreePlanId=10,TermId=1,RequirementId=356}
                 };
                 Console.WriteLine($"Inserted {degreePlanTermRequirements.Length} new degree plan term requirements");
                 foreach (DegreePlanTermRequirement d in degreePlanTermRequirements)

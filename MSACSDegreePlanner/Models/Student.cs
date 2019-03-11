@@ -4,12 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Team01Section01Project.Models
+namespace MSACSDegreePlanner.Models
 {
     public class Student
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int StudentID { get; set; }
+        public int StudentId { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string Snumber { get; set; }

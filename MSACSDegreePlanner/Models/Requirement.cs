@@ -10,7 +10,7 @@ namespace MSACSDegreePlanner.Models
     public class Requirement
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int RequirementID { get; set; }
+        public int RequirementId { get; set; }
         public String RequirementAbbrev { get; set; }
         public String RequirementName { get; set; }
     }

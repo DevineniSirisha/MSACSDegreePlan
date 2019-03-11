@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Team01Section01Project.Models.Student>
+﻿@model IEnumerable<MSACSDegreePlanner.Models.Student>
 
 @{
     ViewData["Title"] = "Index";
@@ -43,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item._919number)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.StudentID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.StudentID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.StudentID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.StudentId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StudentId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StudentId">Delete</a>
             </td>
         </tr>
 }

@@ -257,7 +257,7 @@ namespace MSACSDegreePlanner.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Team01Section01Project.Models.DegreePlan", b =>
+            modelBuilder.Entity("MSACSDegreePlanner.Models.DegreePlan", b =>
                 {
                     b.Property<int>("DegreePlanID");
 
@@ -274,7 +274,7 @@ namespace MSACSDegreePlanner.Migrations
                     b.ToTable("DegreePlan");
                 });
 
-            modelBuilder.Entity("Team01Section01Project.Models.Student", b =>
+            modelBuilder.Entity("MSACSDegreePlanner.Models.Student", b =>
                 {
                     b.Property<int>("StudentID");
 

@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MSACSDegreePlanner.Models;
-using Team01Section01Project.Models;
+using MSACSDegreePlanner.Models;
 
 namespace MSACSDegreePlanner.Data
 {

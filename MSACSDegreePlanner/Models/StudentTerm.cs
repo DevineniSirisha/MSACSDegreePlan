@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using Team01Section01Project.Models;
+using MSACSDegreePlanner.Models;
 
 
 namespace MSACSDegreePlanner.Models
@@ -11,8 +11,8 @@ namespace MSACSDegreePlanner.Models
     public class StudentTerm
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int StudentTermID { get; set; }
-        public int StudentID { get; set; }
+        public int StudentTermId { get; set; }
+        public int StudentId { get; set; }
         public int Term { get; set; }
         public string TermLabel { get; set; }
 

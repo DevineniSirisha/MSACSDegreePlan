@@ -10,7 +10,7 @@ namespace MSACSDegreePlanner.Models
     public class Degree
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int DegreeID { get; set; }
+        public int DegreeId { get; set; }
         public String DegreeAbbrev { get; set; }
         public String DegreePlanName { get; set; }
     }
