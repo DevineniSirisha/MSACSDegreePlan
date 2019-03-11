@@ -20,17 +20,17 @@ namespace MSACSDegreePlanner.Models
         public int StudentId { get; set; }
 
         [Required]
-        [StringLength(6, MinimumLength = 3)]
+        [StringLength(30, MinimumLength = 3)]
         [Display(Name = "DegreePlanAbrev")]
         public String DegreePlanAbrev { get; set; }
 
         [Required]
-        [StringLength(20, MinimumLength = 3)]
+        [StringLength(30, MinimumLength = 3)]
         [Display(Name = "DegreePlanName")]
         public String DegreePlanName { get; set; }
 
         //Navigation Properties
         public Degree Degree { get; set; }
-        public Student student { get; set; }
+        public Student Student { get; set; }
     }
 }

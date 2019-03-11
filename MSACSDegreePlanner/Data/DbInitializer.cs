@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using MSACSDegreePlanner;
 using MSACSDegreePlanner.Data;
 using MSACSDegreePlanner.Models;
-using MSACSDegreePlanner.Models;
+
 
 namespace MSACSDegreePlanner.Data
 {
@@ -64,6 +64,29 @@ namespace MSACSDegreePlanner.Data
                 }
                 context.SaveChanges();
             }
+
+            //Student
+            if (context.Students.Any())
+            {
+                Console.WriteLine("Student records already exists!");
+            }
+            else
+            {
+                var students = new Student[]
+                {
+                    new Student{StudentId=531367,LastName="Devineni",FirstName="Sai Sirisha",Snumber="s531367",_919number=562438},
+                    new Student{StudentId=533985,LastName="Marasini",FirstName="Dristi",Snumber="s533985",_919number=569178},
+                    new Student{StudentId=521315,LastName="Joshi",FirstName="Aawaj",Snumber="s521315",_919number=480684},
+                    new Student{StudentId=533900,LastName="Bourishetty",FirstName="Karun ",Snumber="s533900",_919number=568896}
+                };
+                Console.WriteLine($"Inserted {students.Length} new student record");
+                foreach (Student d in students)
+                {
+                    context.Students.Add(d);
+                }
+                context.SaveChanges();
+            }
+
             //Degreeplan
 
             if (context.DegreePlans.Any())
@@ -92,27 +115,7 @@ namespace MSACSDegreePlanner.Data
                 context.SaveChanges();
             }
 
-            //Student
-            if (context.Students.Any())
-            {
-                Console.WriteLine("Student records already exists!");
-            }
-            else
-            {
-                var students = new Student[]
-                {
-                    new Student{StudentId=531367,LastName="Devineni",FirstName="Sai Sirisha",Snumber="s531367",_919number=562438},
-                    new Student{StudentId=533985,LastName="Marasini",FirstName="Dristi",Snumber="s533985",_919number=569178},
-                    new Student{StudentId=521315,LastName="Joshi",FirstName="Aawaj",Snumber="s521315",_919number=480684},
-                    new Student{StudentId=533900,LastName="Bourishetty",FirstName="Karun ",Snumber="s533900",_919number=568896}				
-				};
-                Console.WriteLine($"Inserted {students.Length} new student record");
-                foreach (Student d in students)
-                {
-                    context.Students.Add(d);
-                }
-                context.SaveChanges();
-            }
+            
 
             //DegreeRequirement
             if (context.DegreeRequirements.Any())
@@ -177,116 +180,113 @@ namespace MSACSDegreePlanner.Data
             {
                 var degreePlanTermRequirements = new DegreePlanTermRequirement[]
                 {
-<<<<<<< HEAD
-                    new DegreePlanTermRequirement{ DegreePlanTermRequirementId =1,DegreePlanId=10,TermId=1,RequirementId=460},
-                     new DegreePlanTermRequirement{ DegreePlanTermRequirementId =2,DegreePlanId=10,TermId=1,RequirementId=356}
-=======
-                    new DegreePlanTermRequirement{ DegreePlanTermRequirementID =1,DegreePlanID=10,TermID=1,RequirementID=460},
-                     new DegreePlanTermRequirement{ DegreePlanTermRequirementID =2,DegreePlanID=10,TermID=1,RequirementID=356},
-                     new DegreePlanTermRequirement{DegreePlanTermRequirementID=3,DegreePlanID=10,TermID=1,RequirementID=542 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=4,DegreePlanID=10,TermID=1,RequirementID=563 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=5,DegreePlanID=10,TermID=2,RequirementID=560 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=6,DegreePlanID=10,TermID=2,RequirementID=555 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=7,DegreePlanID=10,TermID=2,RequirementID=618 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=8,DegreePlanID=10,TermID=3,RequirementID=1 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=9,DegreePlanID=10,TermID=3,RequirementID=664 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=10,DegreePlanID=10,TermID=3,RequirementID=691 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=11,DegreePlanID=10,TermID=4,RequirementID=10 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=12,DegreePlanID=10,TermID=4,RequirementID=20 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=13,DegreePlanID=10,TermID=4,RequirementID=692 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=14,DegreePlanID=11,TermID=1,RequirementID=460 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=15,DegreePlanID=11,TermID=1,RequirementID=356 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=16,DegreePlanID=11,TermID=1,RequirementID=542 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=17,DegreePlanID=11,TermID=1,RequirementID=563 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=18,DegreePlanID=11,TermID=2,RequirementID=560 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=19,DegreePlanID=11,TermID=2,RequirementID=555 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=20,DegreePlanID=11,TermID=2,RequirementID=618 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=21,DegreePlanID=11,TermID=4,RequirementID=1 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=22,DegreePlanID=11,TermID=4,RequirementID=664 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=23,DegreePlanID=11,TermID=4,RequirementID=691 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=24,DegreePlanID=11,TermID=5,RequirementID=10 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=25,DegreePlanID=11,TermID=5,RequirementID=20 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=26,DegreePlanID=11,TermID=5,RequirementID=692 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=27,DegreePlanID=30,TermID=18,RequirementID=460 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=28,DegreePlanID=30,TermID=18,RequirementID=356 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=29,DegreePlanID=30,TermID=18,RequirementID=542 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=30,DegreePlanID=30,TermID=18,RequirementID=563 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=31,DegreePlanID=30,TermID=19,RequirementID=560 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=32,DegreePlanID=30,TermID=19,RequirementID=555 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=33,DegreePlanID=30,TermID=19,RequirementID=618 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=34,DegreePlanID=30,TermID=21,RequirementID=1 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=35,DegreePlanID=30,TermID=21,RequirementID=664 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=36,DegreePlanID=30,TermID=21,RequirementID=691 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=37,DegreePlanID=30,TermID=21,RequirementID=10 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=38,DegreePlanID=30,TermID=22,RequirementID=20 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=39,DegreePlanID=30,TermID=22,RequirementID=692 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=40,DegreePlanID=31,TermID=18,RequirementID=460 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=41,DegreePlanID=31,TermID=18,RequirementID=356 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=42,DegreePlanID=31,TermID=18,RequirementID=542 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=43,DegreePlanID=31,TermID=18,RequirementID=563 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=44,DegreePlanID=31,TermID=19,RequirementID=560 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=45,DegreePlanID=31,TermID=19,RequirementID=555 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=46,DegreePlanID=31,TermID=19,RequirementID=618 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=47,DegreePlanID=31,TermID=20,RequirementID=1 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=48,DegreePlanID=31,TermID=21,RequirementID=664 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=49,DegreePlanID=31,TermID=21,RequirementID=691 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=50,DegreePlanID=31,TermID=21,RequirementID=10 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=51,DegreePlanID=31,TermID=22,RequirementID=20 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=52,DegreePlanID=31,TermID=22,RequirementID=692 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=53,DegreePlanID=12,TermID=1,RequirementID=542 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=54,DegreePlanID=12,TermID=1,RequirementID=460 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=55,DegreePlanID=12,TermID=1,RequirementID=356 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=56,DegreePlanID=12,TermID=3,RequirementID=664 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=57,DegreePlanID=12,TermID=3,RequirementID=1 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=58,DegreePlanID=12,TermID=3,RequirementID=560 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=59,DegreePlanID=12,TermID=2,RequirementID=691 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=60,DegreePlanID=12,TermID=2,RequirementID=10 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=61,DegreePlanID=12,TermID=4,RequirementID=692 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=62,DegreePlanID=12,TermID=4,RequirementID=555 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=63,DegreePlanID=12,TermID=6,RequirementID=563 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=64,DegreePlanID=12,TermID=6,RequirementID=20 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=65,DegreePlanID=12,TermID=6,RequirementID=618 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=66,DegreePlanID=13,TermID=1,RequirementID=356 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=67,DegreePlanID=13,TermID=1,RequirementID=460 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=68,DegreePlanID=13,TermID=1,RequirementID=542 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=69,DegreePlanID=13,TermID=1,RequirementID=563 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=70,DegreePlanID=13,TermID=3,RequirementID=560 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=71,DegreePlanID=13,TermID=3,RequirementID=1 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=72,DegreePlanID=13,TermID=3,RequirementID=664 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=73,DegreePlanID=13,TermID=3,RequirementID=10 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=74,DegreePlanID=13,TermID=4,RequirementID=20 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=75,DegreePlanID=13,TermID=4,RequirementID=691 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=76,DegreePlanID=13,TermID=4,RequirementID=618 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=77,DegreePlanID=13,TermID=6,RequirementID=692 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=78,DegreePlanID=13,TermID=6,RequirementID=555 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=79,DegreePlanID=14,TermID=1,RequirementID=460 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=80,DegreePlanID=14,TermID=1,RequirementID=356 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=81,DegreePlanID=14,TermID=1,RequirementID=542 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=82,DegreePlanID=14,TermID=1,RequirementID=563 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=83,DegreePlanID=14,TermID=2,RequirementID=560 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=84,DegreePlanID=14,TermID=2,RequirementID=555 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=85,DegreePlanID=14,TermID=2,RequirementID=664 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=86,DegreePlanID=14,TermID=4,RequirementID=1 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=87,DegreePlanID=14,TermID=4,RequirementID=618 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=88,DegreePlanID=14,TermID=4,RequirementID=10 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=89,DegreePlanID=14,TermID=5,RequirementID=691 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=90,DegreePlanID=14,TermID=5,RequirementID=20 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=91,DegreePlanID=14,TermID=5,RequirementID=692 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=92,DegreePlanID=15,TermID=1,RequirementID=460 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=93,DegreePlanID=15,TermID=1,RequirementID=356 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=94,DegreePlanID=15,TermID=1,RequirementID=542 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=95,DegreePlanID=15,TermID=1,RequirementID=563 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=96,DegreePlanID=15,TermID=2,RequirementID=560 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=97,DegreePlanID=15,TermID=2,RequirementID=664 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=98,DegreePlanID=15,TermID=2,RequirementID=1 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=99,DegreePlanID=15,TermID=3,RequirementID=555 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=100,DegreePlanID=15,TermID=3,RequirementID=618 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=101,DegreePlanID=15,TermID=3,RequirementID=691 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=102,DegreePlanID=15,TermID=4,RequirementID=10 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=103,DegreePlanID=15,TermID=4,RequirementID=20 },
-new DegreePlanTermRequirement{DegreePlanTermRequirementID=104,DegreePlanID=15,TermID=4,RequirementID=692 }
 
->>>>>>> a2c3ca1e89da137f9c543147abc5502f957557b1
+                    new DegreePlanTermRequirement{ DegreePlanTermRequirementId =1,DegreePlanId=10,TermId=1,RequirementId=460},
+                     new DegreePlanTermRequirement{ DegreePlanTermRequirementId =2,DegreePlanId=10,TermId=1,RequirementId=356},
+                     new DegreePlanTermRequirement{DegreePlanTermRequirementId=3,DegreePlanId=10,TermId=1,RequirementId=542 },
+                    new DegreePlanTermRequirement{DegreePlanTermRequirementId=4,DegreePlanId=10,TermId=1,RequirementId=563 },
+                    new DegreePlanTermRequirement{DegreePlanTermRequirementId=5,DegreePlanId=10,TermId=2,RequirementId=560 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=6,DegreePlanId=10,TermId=2,RequirementId=555 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=7,DegreePlanId=10,TermId=2,RequirementId=618 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=8,DegreePlanId=10,TermId=3,RequirementId=1 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=9,DegreePlanId=10,TermId=3,RequirementId=664 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=10,DegreePlanId=10,TermId=3,RequirementId=691 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=11,DegreePlanId=10,TermId=4,RequirementId=10 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=12,DegreePlanId=10,TermId=4,RequirementId=20 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=13,DegreePlanId=10,TermId=4,RequirementId=692 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=14,DegreePlanId=11,TermId=1,RequirementId=460 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=15,DegreePlanId=11,TermId=1,RequirementId=356 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=16,DegreePlanId=11,TermId=1,RequirementId=542 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=17,DegreePlanId=11,TermId=1,RequirementId=563 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=18,DegreePlanId=11,TermId=2,RequirementId=560 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=19,DegreePlanId=11,TermId=2,RequirementId=555 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=20,DegreePlanId=11,TermId=2,RequirementId=618 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=21,DegreePlanId=11,TermId=4,RequirementId=1 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=22,DegreePlanId=11,TermId=4,RequirementId=664 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=23,DegreePlanId=11,TermId=4,RequirementId=691 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=24,DegreePlanId=11,TermId=5,RequirementId=10 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=25,DegreePlanId=11,TermId=5,RequirementId=20 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=26,DegreePlanId=11,TermId=5,RequirementId=692 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=27,DegreePlanId=30,TermId=18,RequirementId=460 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=28,DegreePlanId=30,TermId=18,RequirementId=356 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=29,DegreePlanId=30,TermId=18,RequirementId=542 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=30,DegreePlanId=30,TermId=18,RequirementId=563 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=31,DegreePlanId=30,TermId=19,RequirementId=560 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=32,DegreePlanId=30,TermId=19,RequirementId=555 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=33,DegreePlanId=30,TermId=19,RequirementId=618 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=34,DegreePlanId=30,TermId=21,RequirementId=1 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=35,DegreePlanId=30,TermId=21,RequirementId=664 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=36,DegreePlanId=30,TermId=21,RequirementId=691 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=37,DegreePlanId=30,TermId=21,RequirementId=10 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=38,DegreePlanId=30,TermId=22,RequirementId=20 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=39,DegreePlanId=30,TermId=22,RequirementId=692 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=40,DegreePlanId=31,TermId=18,RequirementId=460 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=41,DegreePlanId=31,TermId=18,RequirementId=356 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=42,DegreePlanId=31,TermId=18,RequirementId=542 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=43,DegreePlanId=31,TermId=18,RequirementId=563 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=44,DegreePlanId=31,TermId=19,RequirementId=560 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=45,DegreePlanId=31,TermId=19,RequirementId=555 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=46,DegreePlanId=31,TermId=19,RequirementId=618 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=47,DegreePlanId=31,TermId=20,RequirementId=1 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=48,DegreePlanId=31,TermId=21,RequirementId=664 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=49,DegreePlanId=31,TermId=21,RequirementId=691 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=50,DegreePlanId=31,TermId=21,RequirementId=10 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=51,DegreePlanId=31,TermId=22,RequirementId=20 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=52,DegreePlanId=31,TermId=22,RequirementId=692 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=53,DegreePlanId=12,TermId=1,RequirementId=542 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=54,DegreePlanId=12,TermId=1,RequirementId=460 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=55,DegreePlanId=12,TermId=1,RequirementId=356 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=56,DegreePlanId=12,TermId=3,RequirementId=664 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=57,DegreePlanId=12,TermId=3,RequirementId=1 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=58,DegreePlanId=12,TermId=3,RequirementId=560 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=59,DegreePlanId=12,TermId=2,RequirementId=691 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=60,DegreePlanId=12,TermId=2,RequirementId=10 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=61,DegreePlanId=12,TermId=4,RequirementId=692 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=62,DegreePlanId=12,TermId=4,RequirementId=555 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=63,DegreePlanId=12,TermId=6,RequirementId=563 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=64,DegreePlanId=12,TermId=6,RequirementId=20 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=65,DegreePlanId=12,TermId=6,RequirementId=618 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=66,DegreePlanId=13,TermId=1,RequirementId=356 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=67,DegreePlanId=13,TermId=1,RequirementId=460 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=68,DegreePlanId=13,TermId=1,RequirementId=542 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=69,DegreePlanId=13,TermId=1,RequirementId=563 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=70,DegreePlanId=13,TermId=3,RequirementId=560 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=71,DegreePlanId=13,TermId=3,RequirementId=1 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=72,DegreePlanId=13,TermId=3,RequirementId=664 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=73,DegreePlanId=13,TermId=3,RequirementId=10 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=74,DegreePlanId=13,TermId=4,RequirementId=20 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=75,DegreePlanId=13,TermId=4,RequirementId=691 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=76,DegreePlanId=13,TermId=4,RequirementId=618 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=77,DegreePlanId=13,TermId=6,RequirementId=692 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=78,DegreePlanId=13,TermId=6,RequirementId=555 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=79,DegreePlanId=14,TermId=1,RequirementId=460 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=80,DegreePlanId=14,TermId=1,RequirementId=356 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=81,DegreePlanId=14,TermId=1,RequirementId=542 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=82,DegreePlanId=14,TermId=1,RequirementId=563 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=83,DegreePlanId=14,TermId=2,RequirementId=560 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=84,DegreePlanId=14,TermId=2,RequirementId=555 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=85,DegreePlanId=14,TermId=2,RequirementId=664 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=86,DegreePlanId=14,TermId=4,RequirementId=1 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=87,DegreePlanId=14,TermId=4,RequirementId=618 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=88,DegreePlanId=14,TermId=4,RequirementId=10 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=89,DegreePlanId=14,TermId=5,RequirementId=691 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=90,DegreePlanId=14,TermId=5,RequirementId=20 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=91,DegreePlanId=14,TermId=5,RequirementId=692 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=92,DegreePlanId=15,TermId=1,RequirementId=460 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=93,DegreePlanId=15,TermId=1,RequirementId=356 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=94,DegreePlanId=15,TermId=1,RequirementId=542 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=95,DegreePlanId=15,TermId=1,RequirementId=563 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=96,DegreePlanId=15,TermId=2,RequirementId=560 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=97,DegreePlanId=15,TermId=2,RequirementId=664 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=98,DegreePlanId=15,TermId=2,RequirementId=1 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=99,DegreePlanId=15,TermId=3,RequirementId=555 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=100,DegreePlanId=15,TermId=3,RequirementId=618 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=101,DegreePlanId=15,TermId=3,RequirementId=691 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=102,DegreePlanId=15,TermId=4,RequirementId=10 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=103,DegreePlanId=15,TermId=4,RequirementId=20 },
+new DegreePlanTermRequirement{DegreePlanTermRequirementId=104,DegreePlanId=15,TermId=4,RequirementId=692 }
+
+
                 };
                 Console.WriteLine($"Inserted {degreePlanTermRequirements.Length} new degree plan term requirements");
                 foreach (DegreePlanTermRequirement d in degreePlanTermRequirements)

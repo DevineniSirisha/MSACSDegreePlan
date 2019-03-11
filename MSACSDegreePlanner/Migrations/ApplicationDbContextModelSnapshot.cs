@@ -21,73 +21,115 @@ namespace MSACSDegreePlanner.Migrations
 
             modelBuilder.Entity("MSACSDegreePlanner.Models.Degree", b =>
                 {
-                    b.Property<int>("DegreeID");
+                    b.Property<int>("DegreeId");
 
                     b.Property<string>("DegreeAbbrev");
 
                     b.Property<string>("DegreePlanName");
 
-                    b.HasKey("DegreeID");
+                    b.HasKey("DegreeId");
 
                     b.ToTable("Degree");
                 });
 
+            modelBuilder.Entity("MSACSDegreePlanner.Models.DegreePlan", b =>
+                {
+                    b.Property<int>("DegreePlanId");
+
+                    b.Property<int>("DegreeId");
+
+                    b.Property<string>("DegreePlanAbrev")
+                        .IsRequired()
+                        .HasMaxLength(30);
+
+                    b.Property<string>("DegreePlanName")
+                        .IsRequired()
+                        .HasMaxLength(30);
+
+                    b.Property<int>("StudentId");
+
+                    b.HasKey("DegreePlanId");
+
+                    b.HasIndex("DegreeId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("DegreePlan");
+                });
+
             modelBuilder.Entity("MSACSDegreePlanner.Models.DegreePlanTermRequirement", b =>
                 {
-                    b.Property<int>("DegreePlanTermRequirementID");
+                    b.Property<int>("DegreePlanTermRequirementId");
 
-                    b.Property<int>("DegreePlanID");
+                    b.Property<int>("DegreePlanId");
 
-                    b.Property<int>("RequirementID");
+                    b.Property<int>("RequirementId");
 
-                    b.Property<int>("TermID");
+                    b.Property<int>("TermId");
 
-                    b.HasKey("DegreePlanTermRequirementID");
+                    b.HasKey("DegreePlanTermRequirementId");
 
                     b.ToTable("DegreePlanTermRequirement");
                 });
 
             modelBuilder.Entity("MSACSDegreePlanner.Models.DegreeRequirement", b =>
                 {
-                    b.Property<int>("DegreeRequirementID");
+                    b.Property<int>("DegreeRequirementId");
 
-                    b.Property<int>("DegreeID");
+                    b.Property<int>("DegreeId");
 
-                    b.Property<int>("RequirementID");
+                    b.Property<int>("RequirementId");
 
-                    b.HasKey("DegreeRequirementID");
+                    b.HasKey("DegreeRequirementId");
 
-                    b.HasIndex("DegreeID");
+                    b.HasIndex("DegreeId");
 
-                    b.HasIndex("RequirementID");
+                    b.HasIndex("RequirementId");
 
                     b.ToTable("DegreeRequirement");
                 });
 
             modelBuilder.Entity("MSACSDegreePlanner.Models.Requirement", b =>
                 {
-                    b.Property<int>("RequirementID");
+                    b.Property<int>("RequirementId");
 
                     b.Property<string>("RequirementAbbrev");
 
                     b.Property<string>("RequirementName");
 
-                    b.HasKey("RequirementID");
+                    b.HasKey("RequirementId");
 
                     b.ToTable("Requirement");
                 });
 
+            modelBuilder.Entity("MSACSDegreePlanner.Models.Student", b =>
+                {
+                    b.Property<int>("StudentId");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("Snumber");
+
+                    b.Property<int>("_919number");
+
+                    b.HasKey("StudentId");
+
+                    b.ToTable("Student");
+                });
+
             modelBuilder.Entity("MSACSDegreePlanner.Models.StudentTerm", b =>
                 {
-                    b.Property<int>("StudentTermID");
+                    b.Property<int>("StudentTermId");
 
-                    b.Property<int>("StudentID");
+                    b.Property<int>("StudentId");
 
                     b.Property<int>("Term");
 
                     b.Property<string>("TermLabel");
 
-                    b.HasKey("StudentTermID");
+                    b.HasKey("StudentTermId");
 
                     b.ToTable("StudentTerm");
                 });
@@ -259,48 +301,27 @@ namespace MSACSDegreePlanner.Migrations
 
             modelBuilder.Entity("MSACSDegreePlanner.Models.DegreePlan", b =>
                 {
-                    b.Property<int>("DegreePlanID");
+                    b.HasOne("MSACSDegreePlanner.Models.Degree", "Degree")
+                        .WithMany()
+                        .HasForeignKey("DegreeId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.Property<int>("DegreeID");
-
-                    b.Property<string>("DegreePlanAbrev");
-
-                    b.Property<string>("DegreePlanName");
-
-                    b.Property<int>("StudentID");
-
-                    b.HasKey("DegreePlanID");
-
-                    b.ToTable("DegreePlan");
-                });
-
-            modelBuilder.Entity("MSACSDegreePlanner.Models.Student", b =>
-                {
-                    b.Property<int>("StudentID");
-
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("LastName");
-
-                    b.Property<string>("Snumber");
-
-                    b.Property<int>("_919number");
-
-                    b.HasKey("StudentID");
-
-                    b.ToTable("Student");
+                    b.HasOne("MSACSDegreePlanner.Models.Student", "Student")
+                        .WithMany("DegreePlans")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("MSACSDegreePlanner.Models.DegreeRequirement", b =>
                 {
                     b.HasOne("MSACSDegreePlanner.Models.Degree", "Degree")
                         .WithMany()
-                        .HasForeignKey("DegreeID")
+                        .HasForeignKey("DegreeId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("MSACSDegreePlanner.Models.Requirement", "Requirement")
                         .WithMany()
-                        .HasForeignKey("RequirementID")
+                        .HasForeignKey("RequirementId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

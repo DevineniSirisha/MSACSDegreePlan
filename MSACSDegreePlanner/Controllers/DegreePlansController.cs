@@ -22,7 +22,7 @@ namespace MSACSDegreePlanner.Controllers
         // GET: DegreePlans
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.DegreePlans.Include(d => d.student);
+            var applicationDbContext = _context.DegreePlans.Include(d => d.Student);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,7 +35,7 @@ namespace MSACSDegreePlanner.Controllers
             }
 
             var degreePlan = await _context.DegreePlans
-                .Include(d => d.student)
+                .Include(d => d.Student)
                 .FirstOrDefaultAsync(m => m.DegreePlanId == id);
             if (degreePlan == null)
             {
@@ -131,7 +131,7 @@ namespace MSACSDegreePlanner.Controllers
             }
 
             var degreePlan = await _context.DegreePlans
-                .Include(d => d.student)
+                .Include(d => d.Student)
                 .FirstOrDefaultAsync(m => m.DegreePlanId == id);
             if (degreePlan == null)
             {

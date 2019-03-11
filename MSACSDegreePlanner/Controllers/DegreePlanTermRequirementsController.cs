@@ -34,7 +34,7 @@ namespace MSACSDegreePlanner.Controllers
             }
 
             var degreePlanTermRequirement = await _context.DegreePlanTermRequirements
-                .FirstOrDefaultAsync(m => m.DegreePlanTermRequirementID == id);
+                .FirstOrDefaultAsync(m => m.DegreePlanTermRequirementId == id);
             if (degreePlanTermRequirement == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace MSACSDegreePlanner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DegreePlanTermRequirementID,DegreePlanID,TermID,RequirementID")] DegreePlanTermRequirement degreePlanTermRequirement)
+        public async Task<IActionResult> Create([Bind("DegreePlanTermRequirementId,DegreePlanId,TermId,RequirementId")] DegreePlanTermRequirement degreePlanTermRequirement)
         {
             if (ModelState.IsValid)
             {
@@ -86,9 +86,9 @@ namespace MSACSDegreePlanner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DegreePlanTermRequirementID,DegreePlanID,TermID,RequirementID")] DegreePlanTermRequirement degreePlanTermRequirement)
+        public async Task<IActionResult> Edit(int id, [Bind("DegreePlanTermRequirementId,DegreePlanId,TermId,RequirementId")] DegreePlanTermRequirement degreePlanTermRequirement)
         {
-            if (id != degreePlanTermRequirement.DegreePlanTermRequirementID)
+            if (id != degreePlanTermRequirement.DegreePlanTermRequirementId)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace MSACSDegreePlanner.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DegreePlanTermRequirementExists(degreePlanTermRequirement.DegreePlanTermRequirementID))
+                    if (!DegreePlanTermRequirementExists(degreePlanTermRequirement.DegreePlanTermRequirementId))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace MSACSDegreePlanner.Controllers
             }
 
             var degreePlanTermRequirement = await _context.DegreePlanTermRequirements
-                .FirstOrDefaultAsync(m => m.DegreePlanTermRequirementID == id);
+                .FirstOrDefaultAsync(m => m.DegreePlanTermRequirementId == id);
             if (degreePlanTermRequirement == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace MSACSDegreePlanner.Controllers
 
         private bool DegreePlanTermRequirementExists(int id)
         {
-            return _context.DegreePlanTermRequirements.Any(e => e.DegreePlanTermRequirementID == id);
+            return _context.DegreePlanTermRequirements.Any(e => e.DegreePlanTermRequirementId == id);
         }
     }
 }

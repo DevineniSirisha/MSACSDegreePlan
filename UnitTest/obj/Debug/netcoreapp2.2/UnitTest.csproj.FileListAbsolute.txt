@@ -6,7 +6,6 @@ C:\masters\C#.net\MSACSDegreePlan\UnitTest\bin\Debug\netcoreapp2.2\UnitTest.runt
 C:\masters\C#.net\MSACSDegreePlan\UnitTest\bin\Debug\netcoreapp2.2\UnitTest.runtimeconfig.dev.json
 C:\masters\C#.net\MSACSDegreePlan\UnitTest\bin\Debug\netcoreapp2.2\UnitTest.dll
 C:\masters\C#.net\MSACSDegreePlan\UnitTest\bin\Debug\netcoreapp2.2\UnitTest.pdb
-C:\masters\C#.net\MSACSDegreePlan\UnitTest\obj\Debug\netcoreapp2.2\UnitTest.csprojAssemblyReference.cache
 C:\masters\C#.net\MSACSDegreePlan\UnitTest\obj\Debug\netcoreapp2.2\UnitTest.csproj.CoreCompileInputs.cache
 C:\masters\C#.net\MSACSDegreePlan\UnitTest\obj\Debug\netcoreapp2.2\UnitTest.AssemblyInfoInputs.cache
 C:\masters\C#.net\MSACSDegreePlan\UnitTest\obj\Debug\netcoreapp2.2\UnitTest.AssemblyInfo.cs

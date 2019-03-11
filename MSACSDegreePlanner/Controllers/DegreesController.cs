@@ -34,7 +34,7 @@ namespace MSACSDegreePlanner.Controllers
             }
 
             var degree = await _context.Degrees
-                .FirstOrDefaultAsync(m => m.DegreeID == id);
+                .FirstOrDefaultAsync(m => m.DegreeId == id);
             if (degree == null)
             {
                 return NotFound();
@@ -88,7 +88,7 @@ namespace MSACSDegreePlanner.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("DegreeID,DegreeAbbrev,DegreePlanName")] Degree degree)
         {
-            if (id != degree.DegreeID)
+            if (id != degree.DegreeId)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace MSACSDegreePlanner.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DegreeExists(degree.DegreeID))
+                    if (!DegreeExists(degree.DegreeId))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace MSACSDegreePlanner.Controllers
             }
 
             var degree = await _context.Degrees
-                .FirstOrDefaultAsync(m => m.DegreeID == id);
+                .FirstOrDefaultAsync(m => m.DegreeId == id);
             if (degree == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace MSACSDegreePlanner.Controllers
 
         private bool DegreeExists(int id)
         {
-            return _context.Degrees.Any(e => e.DegreeID == id);
+            return _context.Degrees.Any(e => e.DegreeId == id);
         }
     }
 }
