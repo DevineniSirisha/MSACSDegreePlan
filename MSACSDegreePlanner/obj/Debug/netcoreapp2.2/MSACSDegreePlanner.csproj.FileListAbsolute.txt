@@ -134,3 +134,13 @@ C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\
 C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\DegreePlanTermRequirements\Details.g.cshtml.cs
 C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\DegreePlanTermRequirements\Edit.g.cshtml.cs
 C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\DegreePlanTermRequirements\Index.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\DegreeRequirements\Create.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\DegreeRequirements\Delete.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\DegreeRequirements\Details.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\DegreeRequirements\Edit.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\DegreeRequirements\Index.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\Requirements\Create.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\Requirements\Delete.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\Requirements\Details.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\Requirements\Edit.g.cshtml.cs
+C:\44663\MSACSDegreePlan\MSACSDegreePlanner\obj\Debug\netcoreapp2.2\Razor\Views\Requirements\Index.g.cshtml.cs
