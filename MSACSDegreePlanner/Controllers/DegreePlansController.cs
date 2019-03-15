@@ -20,10 +20,36 @@ namespace MSACSDegreePlanner.Controllers
         }
 
         // GET: DegreePlans
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            var applicationDbContext = _context.DegreePlans.Include(d => d.Student);
-            return View(await applicationDbContext.ToListAsync());
+            ViewData["DegreePlanAbrev"] = String.IsNullOrEmpty(sortOrder) ? "plan_desc" : "";
+            ViewData["DegreePlanName"] = sortOrder == "planname_desc" ? "id_desc" : "planname_desc";
+            ViewData["CurrentFilter"] = searchString;
+            var degreeplan = from s in _context.DegreePlans
+                             select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                degreeplan = degreeplan.Where(s => s.DegreePlanName.Contains(searchString)
+                                       || s.DegreePlanAbrev.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "plan_desc":
+                    degreeplan = degreeplan.OrderByDescending(s => s.DegreePlanAbrev);
+                    break;
+                case "planname_desc":
+                    degreeplan = degreeplan.OrderBy(s => s.DegreePlanName);
+                    break;
+                case "id_desc":
+                    degreeplan = degreeplan.OrderByDescending(s => s.DegreePlanId);
+                    break;
+                default:
+                    degreeplan = degreeplan.OrderBy(s => s.DegreePlanId);
+                    break;
+            }
+            return View(await degreeplan.AsNoTracking().ToListAsync());
         }
 
         // GET: DegreePlans/Details/5
@@ -35,6 +61,7 @@ namespace MSACSDegreePlanner.Controllers
             }
 
             var degreePlan = await _context.DegreePlans
+                .Include(d => d.Degree)
                 .Include(d => d.Student)
                 .FirstOrDefaultAsync(m => m.DegreePlanId == id);
             if (degreePlan == null)
@@ -48,6 +75,7 @@ namespace MSACSDegreePlanner.Controllers
         // GET: DegreePlans/Create
         public IActionResult Create()
         {
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeId");
             ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId");
             return View();
         }
@@ -65,6 +93,7 @@ namespace MSACSDegreePlanner.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeId", degreePlan.DegreeId);
             ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId", degreePlan.StudentId);
             return View(degreePlan);
         }
@@ -82,6 +111,7 @@ namespace MSACSDegreePlanner.Controllers
             {
                 return NotFound();
             }
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeId", degreePlan.DegreeId);
             ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId", degreePlan.StudentId);
             return View(degreePlan);
         }
@@ -118,6 +148,7 @@ namespace MSACSDegreePlanner.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeId", degreePlan.DegreeId);
             ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId", degreePlan.StudentId);
             return View(degreePlan);
         }
@@ -131,6 +162,7 @@ namespace MSACSDegreePlanner.Controllers
             }
 
             var degreePlan = await _context.DegreePlans
+                .Include(d => d.Degree)
                 .Include(d => d.Student)
                 .FirstOrDefaultAsync(m => m.DegreePlanId == id);
             if (degreePlan == null)

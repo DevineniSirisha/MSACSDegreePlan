@@ -20,9 +20,43 @@ namespace MSACSDegreePlanner.Controllers
         }
 
         // GET: Students
-        public async Task<IActionResult> Index()
+        //public async Task<IActionResult> Index()
+        //{
+        //    return View(await _context.Students.ToListAsync());
+        //}
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Students.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["SnumberSortParm"] = sortOrder == "snumber_desc" ? "id_desc" : "snumber_desc";
+            ViewData["CurrentFilter"] = searchString;
+            var students = from s in _context.Students
+                           select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.LastName.Contains(searchString)
+                                       || s.FirstName.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    students = students.OrderByDescending(s => s.LastName);
+                    break;
+                case "fname_desc":
+                    students = students.OrderBy(s => s.FirstName);
+                    break;
+                case "snumber_desc":
+                    students = students.OrderByDescending(s => s.Snumber);
+                    break;
+                case "id_desc":
+                    students = students.OrderByDescending(s => s._919number);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.FirstName);
+                    break;
+            }
+            return View(await students.AsNoTracking().ToListAsync());
         }
 
         // GET: Students/Details/5

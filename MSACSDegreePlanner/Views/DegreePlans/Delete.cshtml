@@ -12,12 +12,6 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DegreeId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DegreeId)
-        </dd>
-        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.DegreePlanAbrev)
         </dt>
         <dd class = "col-sm-10">
@@ -29,6 +23,12 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.DegreePlanName)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Degree)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Degree.DegreeId)
+        </dd class>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Student)
         </dt>
