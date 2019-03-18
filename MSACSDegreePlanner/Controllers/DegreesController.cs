@@ -24,8 +24,15 @@ namespace MSACSDegreePlanner.Controllers
         {
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewData["CurrentFilter"] = searchString;
+
             var degrees = from d in _context.Degrees
                            select d;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                degrees = degrees.Where(d => d.DegreeAbbrev.Contains(searchString)
+                                       || d.DegreePlanName.Contains(searchString));
+            }
             switch (sortOrder)
             {
                 case "name_desc":

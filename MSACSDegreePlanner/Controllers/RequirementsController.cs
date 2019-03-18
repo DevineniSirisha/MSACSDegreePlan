@@ -24,8 +24,14 @@ namespace MSACSDegreePlanner.Controllers
         {
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewData["CurrentFilter"] = searchString;
             var requirements = from r in _context.Requirements
                           select r;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                requirements = requirements.Where(r => r.RequirementAbbrev.Contains(searchString)
+                                       || r.RequirementName.Contains(searchString));
+            }
             switch (sortOrder)
             {
                 case "name_desc":
