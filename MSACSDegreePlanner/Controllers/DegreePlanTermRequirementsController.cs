@@ -20,9 +20,39 @@ namespace MSACSDegreePlanner.Controllers
         }
 
         // GET: DegreePlanTermRequirements
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.DegreePlanTermRequirements.ToListAsync());
+            ViewData["DegreePlanIdParm"] = String.IsNullOrEmpty(sortOrder) ? "DegreeplanId_desc" : "";
+            ViewData["TermIdParm"] = sortOrder == "TermId" ? "TermId_desc" : "TermId";
+            ViewData["RequirementIdParm"] = sortOrder == "RequirementId" ? "ReauirementId_desc" : "RequirementId";
+            ViewData["CurrentFilter"] = searchString;
+            var degreeplantermreq = from s in _context.DegreePlanTermRequirements
+                             select s;
+
+         
+
+            switch (sortOrder)
+            {
+                case "DegreeplanId_desc":
+                    degreeplantermreq = degreeplantermreq.OrderByDescending(s => s.DegreePlanId);
+                    break;
+                case "TermId_desc":
+                    degreeplantermreq = degreeplantermreq.OrderByDescending(s => s.TermId);
+                    break;
+                case "TermId":
+                    degreeplantermreq = degreeplantermreq.OrderBy(s => s.TermId);
+                    break;
+                case "RequirementId":
+                    degreeplantermreq = degreeplantermreq.OrderBy(s => s.RequirementId);
+                    break;
+                case "ReauirementId_desc":
+                    degreeplantermreq = degreeplantermreq.OrderByDescending(s => s.RequirementId);
+                    break;
+                default:
+                    degreeplantermreq = degreeplantermreq.OrderBy(s => s.DegreePlanTermRequirementId);
+                    break;
+            }
+            return View(await degreeplantermreq.AsNoTracking().ToListAsync());
         }
 
         // GET: DegreePlanTermRequirements/Details/5
