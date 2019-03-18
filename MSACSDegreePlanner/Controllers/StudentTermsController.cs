@@ -20,9 +20,46 @@ namespace MSACSDegreePlanner.Controllers
         }
 
         // GET: StudentTerms
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.StudentTerms.ToListAsync());
+
+            ViewData["StudentIdParm"] = String.IsNullOrEmpty(sortOrder) ? "StudentId_desc" : "";
+            ViewData["TermParm"] = sortOrder == "Term" ? "Term_desc" : "Term";
+            ViewData["TermLabelParm"] = sortOrder == "TermLabel" ? "TermLabel_desc" : "TermLabel";
+            ViewData["CurrentFilter"] = searchString;
+
+            var studentterms = from s in _context.StudentTerms
+                                    select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                studentterms = studentterms.Where(s => s.StudentId.ToString().Contains(searchString)
+                                       || s.Term.ToString().Contains(searchString) || s.TermLabel.ToString().Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "StudentId_desc":
+                    studentterms = studentterms.OrderByDescending(s => s.StudentId);
+                    break;
+                case "Term_desc":
+                    studentterms = studentterms.OrderByDescending(s => s.Term);
+                    break;
+                case "Term":
+                    studentterms = studentterms.OrderBy(s => s.Term);
+                    break;
+                case "TermLabel":
+                    studentterms = studentterms.OrderBy(s => s.TermLabel);
+                    break;
+                case "TermLabel_desc":
+                    studentterms = studentterms.OrderByDescending(s => s.TermLabel);
+                    break;
+                default:
+                    studentterms = studentterms.OrderBy(s => s.StudentTermId);
+                    break;
+            }
+
+            return View(await studentterms.AsNoTracking().ToListAsync());
         }
 
         // GET: StudentTerms/Details/5
