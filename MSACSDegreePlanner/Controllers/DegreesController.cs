@@ -20,9 +20,26 @@ namespace MSACSDegreePlanner.Controllers
         }
 
         // GET: Degrees
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Degrees.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            var degrees = from d in _context.Degrees
+                           select d;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    degrees = degrees.OrderByDescending(d =>d.DegreeAbbrev);
+                    break;
+                case "Date":
+                    degrees = degrees.OrderBy(d => d.DegreePlanName);
+                    break;
+             
+                default:
+                    degrees = degrees.OrderBy(d => d.DegreeAbbrev);
+                    break;
+            }
+            return View(await degrees.AsNoTracking().ToListAsync());
         }
 
         // GET: Degrees/Details/5
