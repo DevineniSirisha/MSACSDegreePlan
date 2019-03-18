@@ -20,9 +20,26 @@ namespace MSACSDegreePlanner.Controllers
         }
 
         // GET: Requirements
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Requirements.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            var requirements = from r in _context.Requirements
+                          select r;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    requirements = requirements.OrderByDescending(r => r.RequirementAbbrev);
+                    break;
+                case "Date":
+                    requirements = requirements.OrderBy(r =>r.RequirementName );
+                    break;
+
+                default:
+                    requirements = requirements.OrderBy(r => r.RequirementAbbrev);
+                    break;
+            }
+            return View(await requirements.AsNoTracking().ToListAsync());
         }
 
         // GET: Requirements/Details/5
