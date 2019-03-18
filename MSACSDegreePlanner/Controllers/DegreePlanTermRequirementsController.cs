@@ -29,7 +29,11 @@ namespace MSACSDegreePlanner.Controllers
             var degreeplantermreq = from s in _context.DegreePlanTermRequirements
                              select s;
 
-         
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                degreeplantermreq = degreeplantermreq.Where(s => s.DegreePlanId.ToString().Contains(searchString)
+                                       || s.TermId.ToString().Contains(searchString)|| s.RequirementId.ToString().Contains(searchString));
+            }
 
             switch (sortOrder)
             {
