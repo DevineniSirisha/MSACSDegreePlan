@@ -14,6 +14,17 @@ Visual Studio 2017 (Community Edition)
 
 [Issue Tracker](https://github.com/DevineniSirisha/MSACSDegreePlan/issues)
 
+## Screenshots of app running locally 
+
+Students Index  
+
+![Students](https://user-images.githubusercontent.com/31771293/54783017-4e54f100-4bee-11e9-9e62-415dbb81941e.PNG)  
+
+DegreePlan Index  
+
+![DegreePlan](https://user-images.githubusercontent.com/31771293/54783142-98d66d80-4bee-11e9-8e9a-0fc9ccafd8e3.PNG)  
+
+
 ## Developers
 - **Sai Sirisha Devineni**  
 - **Karun Bourishetty**  
