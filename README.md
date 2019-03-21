@@ -24,7 +24,6 @@ DegreePlan Index
 
 ![DegreePlan](https://user-images.githubusercontent.com/31771293/54783142-98d66d80-4bee-11e9-8e9a-0fc9ccafd8e3.PNG)  
 
-
 ## Developers
 - **Sai Sirisha Devineni**  
 - **Karun Bourishetty**  
