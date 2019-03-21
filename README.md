@@ -11,7 +11,7 @@ C#
 Visual Studio 2017 (Community Edition)
 
 ## Developers
-**Sai Sirisha Devineni**
-**Karun Bourishetty**
-**Dristi Marisini**
-**Aawaj Joshi**
+- **Sai Sirisha Devineni**  
+- **Karun Bourishetty**  
+- **Dristi Marisini**  
+- **Aawaj Joshi**  
