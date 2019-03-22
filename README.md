@@ -30,9 +30,13 @@ In order to run our app, we recommend you use Microsoft's [Visual Studio](https:
 
 Follow these steps to open and run the project:
 
-- Open the project/solution in Visual Studio by clicking on 
+- Open the project/solution in Visual Studio by clicking on `File -> Open -> Project/Solution`
 
-- Run the app by clicking on 
+![Open Project](https://user-images.githubusercontent.com/31771293/54852276-6db95000-4cba-11e9-95c9-2b0dfdc0c06c.png)  
+
+- Run the app by clicking on `IIS Express` button
+
+![Run Project](https://user-images.githubusercontent.com/31771293/54852278-70b44080-4cba-11e9-95d6-3f0d74636e82.png)  
 
 
 ## Link to our issue tracker
