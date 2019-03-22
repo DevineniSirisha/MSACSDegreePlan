@@ -58,3 +58,16 @@ DegreePlan Index
 - **Karun Bourishetty**  
 - **Dristi Marisini**  
 - **Aawaj Joshi**  
+
+## Cost Estimation for our application
+
+| take-home hourly rate 	| 30     	|
+|-----------------------	|--------	|
+| multiplier            	| 2.7    	|
+| billing rate          	| 80     	|
+| developers            	| 4      	|
+| hours per developer   	| 10     	|
+| Total cost estimation 	| 12800$ 	|
+
+
+## we have achieved 75% of the total value
