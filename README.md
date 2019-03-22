@@ -1,6 +1,6 @@
 # MSACS Degree Plan with 2 pre-requisites (Team 01)
 
-Our degree plan application is designed for use by students who are required to enroll and complete two pre-requisite classes in order to earn their MSACS degree. 
+Our degree plan application is designed for use by students who are required to enroll and complete two pre-requisite classes in order to earn their MSACS degree. Students following the MSACS + 2 pre-requisites degree plan must complete two pre-requisite classes, Network Fundamentals (44-356) and Database (44-460), with a satisfactory grade along with eleven degree-specific classes. 
 
 ## Language implemented 
 
