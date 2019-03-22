@@ -8,11 +8,46 @@ C#
 
 ## IDE used
 
-Visual Studio 2017 (Community Edition)
+Visual Studio 2017 (Community Edition)  
+
+## Setup
+
+**1. Cloning**
+
+To clone our remote repository down to your computer, we recommend you do so with HTTPS:
+
+- Clone with HTTPS - https://github.com/DevineniSirisha/MSACSDegreePlan.git
+
+Open [GitBash](https://gitforwindows.org/) and change the current working directory if desired. Next, type `git clone` and paste the HTTPS link above. 
+
+```$ git clone https://github.com/DevineniSirisha/MSACSDegreePlan.git```
+
+Running this command will create a local copy of our repository on the specified directory in your computer.
+
+**2. Running**
+
+In order to run our app, we recommend you use Microsoft's [Visual Studio](https://visualstudio.microsoft.com/).
+
+Follow these steps to open and run the project:
+
+- Open the project/solution in Visual Studio by clicking on 
+
+- Run the app by clicking on 
+
 
 ## Link to our issue tracker
 
 [Issue Tracker](https://github.com/DevineniSirisha/MSACSDegreePlan/issues)
+
+## Screenshots of app running locally 
+
+Students Index  
+
+![Students](https://user-images.githubusercontent.com/31771293/54783017-4e54f100-4bee-11e9-9e62-415dbb81941e.PNG)  
+
+DegreePlan Index  
+
+![DegreePlan](https://user-images.githubusercontent.com/31771293/54783142-98d66d80-4bee-11e9-8e9a-0fc9ccafd8e3.PNG)  
 
 ## Developers
 - **Sai Sirisha Devineni**  
