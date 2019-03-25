@@ -61,7 +61,7 @@ DegreePlan Index
 
 ## Cost Estimation for our application
 
-| take-home hourly rate 	| 30     	|
+| take-home hourly rate 	| Price 	|
 |-----------------------	|--------	|
 | multiplier            	| 2.7    	|
 | billing rate          	| 80     	|
