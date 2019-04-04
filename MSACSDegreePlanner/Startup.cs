@@ -44,6 +44,8 @@ namespace MSACSDegreePlanner
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
+            services.BuildServiceProvider().GetService<ApplicationDbContext>().Database.Migrate();
+
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
