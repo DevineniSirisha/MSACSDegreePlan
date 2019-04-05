@@ -36,17 +36,16 @@ namespace MSACSDegreePlanner
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            // Use SQL Database if in Azure, otherwise, use SQLite
+            // Use SQL Database if in Azure, otherwise, use local
             if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
             {
-               services.AddDbContext<ApplicationDbContext>(options =>
-           options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+               services.AddDbContext<ApplicationDbContext>(options => 
+               options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
             }
             else
             {
-                //services.AddDbContext<ApplicationDbContext>(options =>
-                //   options.UseSqlite("Data Source=localdatabase.db"));
-                   services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                services.AddDbContext<ApplicationDbContext>(options => 
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             }
 
             // Automatically perform database migration
