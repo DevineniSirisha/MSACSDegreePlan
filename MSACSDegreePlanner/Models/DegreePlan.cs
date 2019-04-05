@@ -29,6 +29,8 @@ namespace MSACSDegreePlanner.Models
         [Display(Name = "DegreePlanName")]
         public String DegreePlanName { get; set; }
 
+        public bool Check { get; set; }
+
         //Navigation Properties
         public Degree Degree { get; set; }
         public Student Student { get; set; }

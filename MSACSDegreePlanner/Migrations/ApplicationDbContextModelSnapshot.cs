@@ -36,6 +36,8 @@ namespace MSACSDegreePlanner.Migrations
                 {
                     b.Property<int>("DegreePlanId");
 
+                    b.Property<bool>("Check");
+
                     b.Property<int>("DegreeId");
 
                     b.Property<string>("DegreePlanAbrev")
@@ -105,6 +107,8 @@ namespace MSACSDegreePlanner.Migrations
             modelBuilder.Entity("MSACSDegreePlanner.Models.Student", b =>
                 {
                     b.Property<int>("StudentId");
+
+                    b.Property<bool>("Check");
 
                     b.Property<string>("FirstName");
 

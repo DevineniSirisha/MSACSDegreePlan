@@ -14,5 +14,6 @@ namespace MSACSDegreePlanner.Models
         public string FirstName { get; set; }
         public string Snumber { get; set; }
         public int _919number { get; set; }
+        public bool Check { get; set; }
     }
 }
