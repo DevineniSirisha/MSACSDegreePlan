@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MSACSDegreePlanner.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190405143455_Initial")]
-    partial class Initial
+    [Migration("20190405192954_abbcd")]
+    partial class abbcd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,6 +66,8 @@ namespace MSACSDegreePlanner.Migrations
                     b.Property<int>("DegreePlanTermRequirementId");
 
                     b.Property<int>("DegreePlanId");
+
+                    b.Property<bool>("Done");
 
                     b.Property<int>("RequirementId");
 

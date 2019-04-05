@@ -26,6 +26,6 @@ namespace MSACSDegreePlanner.Models
         //public Requirement Requirement { get; set; }
         //[ForeignKey("TermID")]
         //public StudentTerm StudentTerm { get; set; }
-
+        public bool Done { get; set; }
     }
 }

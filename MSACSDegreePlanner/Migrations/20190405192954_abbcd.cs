@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MSACSDegreePlanner.Migrations
 {
-    public partial class Initial : Migration
+    public partial class abbcd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -67,7 +67,8 @@ namespace MSACSDegreePlanner.Migrations
                     DegreePlanTermRequirementId = table.Column<int>(nullable: false),
                     DegreePlanId = table.Column<int>(nullable: false),
                     TermId = table.Column<int>(nullable: false),
-                    RequirementId = table.Column<int>(nullable: false)
+                    RequirementId = table.Column<int>(nullable: false),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {

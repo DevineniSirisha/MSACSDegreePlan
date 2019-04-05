@@ -65,6 +65,8 @@ namespace MSACSDegreePlanner.Migrations
 
                     b.Property<int>("DegreePlanId");
 
+                    b.Property<bool>("Done");
+
                     b.Property<int>("RequirementId");
 
                     b.Property<int>("TermId");
