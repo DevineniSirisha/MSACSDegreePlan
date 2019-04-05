@@ -19,7 +19,7 @@ namespace MSACSDegreePlanner.Models
         //public Student Student { get; set; }
         //[ForeignKey("StudentID")]
 
-        public bool Done { get; set}
+        public bool Done { get; set; }
 
     }
 }
