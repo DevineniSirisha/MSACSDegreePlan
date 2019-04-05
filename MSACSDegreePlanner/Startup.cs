@@ -44,8 +44,10 @@ namespace MSACSDegreePlanner
             }
             else
             {
-                services.AddDbContext<ApplicationDbContext>(options => 
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                services.AddDbContext<ApplicationDbContext>(options =>
+           options.UseSqlServer("Data Source=localdatabase.db"));
+                //services.AddDbContext<ApplicationDbContext>(options => 
+                //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             }
 
             // Automatically perform database migration
