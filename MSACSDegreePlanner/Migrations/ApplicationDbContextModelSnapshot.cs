@@ -82,6 +82,8 @@ namespace MSACSDegreePlanner.Migrations
 
                     b.Property<int>("DegreeId");
 
+                    b.Property<bool>("Done");
+
                     b.Property<int>("RequirementId");
 
                     b.HasKey("DegreeRequirementId");
@@ -128,6 +130,8 @@ namespace MSACSDegreePlanner.Migrations
             modelBuilder.Entity("MSACSDegreePlanner.Models.StudentTerm", b =>
                 {
                     b.Property<int>("StudentTermId");
+
+                    b.Property<bool>("Done");
 
                     b.Property<int>("StudentId");
 
