@@ -25,5 +25,7 @@ namespace MSACSDegreePlanner.Models
 
         //public Requirement Requirement { get; set; }
 
+        public bool Done { get; set} 
+
     }
 }

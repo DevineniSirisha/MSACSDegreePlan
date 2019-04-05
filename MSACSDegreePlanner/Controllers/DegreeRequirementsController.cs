@@ -88,7 +88,7 @@ namespace MSACSDegreePlanner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DegreeRequirementId,DegreeId,RequirementId")] DegreeRequirement degreeRequirement)
+        public async Task<IActionResult> Create([Bind("DegreeRequirementId,DegreeId,RequirementId, Done")] DegreeRequirement degreeRequirement)
         {
             if (ModelState.IsValid)
             {
