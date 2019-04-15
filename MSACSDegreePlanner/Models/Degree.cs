@@ -11,7 +11,11 @@ namespace MSACSDegreePlanner.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DegreeId { get; set; }
+        [StringLength(50, MinimumLength = 3)]
+        [Display(Name = "Degree Abbreviation")]
         public String DegreeAbbrev { get; set; }
+        [StringLength(50, MinimumLength = 3)]
+        [Display(Name = "Degree Plan Name")]
         public String DegreePlanName { get; set; }
     }
 

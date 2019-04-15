@@ -11,7 +11,11 @@ namespace MSACSDegreePlanner.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int RequirementId { get; set; }
+        [StringLength(50, MinimumLength = 3)]
+        [Display(Name = "Requirement Abbreviation")]
         public String RequirementAbbrev { get; set; }
+        [StringLength(50, MinimumLength = 3)]
+        [Display(Name = "Requirement Name")]
         public String RequirementName { get; set; }
     }
 }
