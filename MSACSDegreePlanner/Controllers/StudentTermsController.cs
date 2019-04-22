@@ -19,51 +19,52 @@ namespace MSACSDegreePlanner.Controllers
             _context = context;
         }
 
-        // GET: StudentTerms
-        public async Task<IActionResult> Index(string sortOrder, string searchString)
-        {
+		// GET: StudentTerms
+		public async Task<IActionResult> Index(string sortOrder, string searchString)
+		{
 
-            ViewData["StudentIdParm"] = String.IsNullOrEmpty(sortOrder) ? "StudentId_desc" : "";
-            ViewData["TermParm"] = sortOrder == "Term" ? "Term_desc" : "Term";
-            ViewData["TermLabelParm"] = sortOrder == "TermLabel" ? "TermLabel_desc" : "TermLabel";
-            ViewData["CurrentFilter"] = searchString;
+			ViewData["StudentIdParm"] = String.IsNullOrEmpty(sortOrder) ? "StudentId_desc" : "";
+			ViewData["TermParm"] = sortOrder == "Term" ? "Term_desc" : "Term";
+			ViewData["TermLabelParm"] = sortOrder == "TermLabel" ? "TermLabel_desc" : "TermLabel";
+			ViewData["CurrentFilter"] = searchString;
 
-            var studentterms = from s in _context.StudentTerms
-                                    select s;
+			var studentterms = from s in _context.StudentTerms
+							   select s;
 
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                studentterms = studentterms.Where(s => s.StudentId.ToString().Contains(searchString)
-                                       || s.Term.ToString().Contains(searchString) || s.TermLabel.ToString().Contains(searchString));
-            }
+			if (!String.IsNullOrEmpty(searchString))
+			{
+				studentterms = studentterms.Where(s => s.StudentId.ToString().Contains(searchString)
+									   || s.Term.ToString().Contains(searchString) || s.TermLabel.ToString().Contains(searchString));
+			}
 
-            switch (sortOrder)
-            {
-                case "StudentId_desc":
-                    studentterms = studentterms.OrderByDescending(s => s.StudentId);
-                    break;
-                case "Term_desc":
-                    studentterms = studentterms.OrderByDescending(s => s.Term);
-                    break;
-                case "Term":
-                    studentterms = studentterms.OrderBy(s => s.Term);
-                    break;
-                case "TermLabel":
-                    studentterms = studentterms.OrderBy(s => s.TermLabel);
-                    break;
-                case "TermLabel_desc":
-                    studentterms = studentterms.OrderByDescending(s => s.TermLabel);
-                    break;
-                default:
-                    studentterms = studentterms.OrderBy(s => s.StudentTermId);
-                    break;
-            }
+			switch (sortOrder)
+			{
+				case "StudentId_desc":
+					studentterms = studentterms.OrderByDescending(s => s.StudentId);
+					break;
+				case "Term_desc":
+					studentterms = studentterms.OrderByDescending(s => s.Term);
+					break;
+				case "Term":
+					studentterms = studentterms.OrderBy(s => s.Term);
+					break;
+				case "TermLabel":
+					studentterms = studentterms.OrderBy(s => s.TermLabel);
+					break;
+				case "TermLabel_desc":
+					studentterms = studentterms.OrderByDescending(s => s.TermLabel);
+					break;
+				default:
+					studentterms = studentterms.OrderBy(s => s.StudentTermId);
+					break;
+			}
 
-            return View(await studentterms.AsNoTracking().ToListAsync());
-        }
+			return View(await studentterms.AsNoTracking().ToListAsync());
+		}
 
-        // GET: StudentTerms/Details/5
-        public async Task<IActionResult> Details(int? id)
+
+		// GET: StudentTerms/Details/5
+		public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -123,7 +124,7 @@ namespace MSACSDegreePlanner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StudentTermId,StudentId,Term,TermLabel")] StudentTerm studentTerm)
+        public async Task<IActionResult> Edit(int id, [Bind("StudentTermId,StudentId,Term,TermLabel,Done")] StudentTerm studentTerm)
         {
             if (id != studentTerm.StudentTermId)
             {

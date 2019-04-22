@@ -19,38 +19,38 @@ namespace MSACSDegreePlanner.Controllers
             _context = context;
         }
 
-        // GET: Degrees
-        public async Task<IActionResult> Index(string sortOrder, string searchString)
-        {
-            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
-            ViewData["CurrentFilter"] = searchString;
+		// GET: Degrees
+		public async Task<IActionResult> Index(string sortOrder, string searchString)
+		{
+			ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+			ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+			ViewData["CurrentFilter"] = searchString;
 
-            var degrees = from d in _context.Degrees
-                           select d;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                degrees = degrees.Where(d => d.DegreeAbbrev.Contains(searchString)
-                                       || d.DegreePlanName.Contains(searchString));
-            }
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    degrees = degrees.OrderByDescending(d =>d.DegreeAbbrev);
-                    break;
-                case "Date":
-                    degrees = degrees.OrderBy(d => d.DegreePlanName);
-                    break;
-             
-                default:
-                    degrees = degrees.OrderBy(d => d.DegreeAbbrev);
-                    break;
-            }
-            return View(await degrees.AsNoTracking().ToListAsync());
-        }
+			var degrees = from d in _context.Degrees
+						  select d;
+			if (!String.IsNullOrEmpty(searchString))
+			{
+				degrees = degrees.Where(d => d.DegreeAbbrev.Contains(searchString)
+									   || d.DegreePlanName.Contains(searchString));
+			}
+			switch (sortOrder)
+			{
+				case "name_desc":
+					degrees = degrees.OrderByDescending(d => d.DegreeAbbrev);
+					break;
+				case "Date":
+					degrees = degrees.OrderBy(d => d.DegreePlanName);
+					break;
 
-        // GET: Degrees/Details/5
-        public async Task<IActionResult> Details(int? id)
+				default:
+					degrees = degrees.OrderBy(d => d.DegreeAbbrev);
+					break;
+			}
+			return View(await degrees.AsNoTracking().ToListAsync());
+		}
+
+		// GET: Degrees/Details/5
+		public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -78,7 +78,7 @@ namespace MSACSDegreePlanner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DegreeID,DegreeAbbrev,DegreePlanName")] Degree degree)
+        public async Task<IActionResult> Create([Bind("DegreeId,DegreeAbbrev,DegreePlanName")] Degree degree)
         {
             if (ModelState.IsValid)
             {
@@ -110,7 +110,7 @@ namespace MSACSDegreePlanner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DegreeID,DegreeAbbrev,DegreePlanName")] Degree degree)
+        public async Task<IActionResult> Edit(int id, [Bind("DegreeId,DegreeAbbrev,DegreePlanName")] Degree degree)
         {
             if (id != degree.DegreeId)
             {

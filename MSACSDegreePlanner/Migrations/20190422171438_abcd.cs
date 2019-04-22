@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MSACSDegreePlanner.Migrations
 {
-    public partial class Initial : Migration
+    public partial class abcd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -52,8 +52,8 @@ namespace MSACSDegreePlanner.Migrations
                 columns: table => new
                 {
                     DegreeId = table.Column<int>(nullable: false),
-                    DegreeAbbrev = table.Column<string>(nullable: true),
-                    DegreePlanName = table.Column<string>(nullable: true)
+                    DegreeAbbrev = table.Column<string>(maxLength: 50, nullable: true),
+                    DegreePlanName = table.Column<string>(maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -80,8 +80,8 @@ namespace MSACSDegreePlanner.Migrations
                 columns: table => new
                 {
                     RequirementId = table.Column<int>(nullable: false),
-                    RequirementAbbrev = table.Column<string>(nullable: true),
-                    RequirementName = table.Column<string>(nullable: true)
+                    RequirementAbbrev = table.Column<string>(maxLength: 50, nullable: true),
+                    RequirementName = table.Column<string>(maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -93,9 +93,9 @@ namespace MSACSDegreePlanner.Migrations
                 columns: table => new
                 {
                     StudentId = table.Column<int>(nullable: false),
-                    LastName = table.Column<string>(nullable: true),
-                    FirstName = table.Column<string>(nullable: true),
-                    Snumber = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(maxLength: 50, nullable: true),
+                    FirstName = table.Column<string>(maxLength: 50, nullable: true),
+                    Snumber = table.Column<string>(maxLength: 50, nullable: true),
                     _919number = table.Column<int>(nullable: false),
                     Check = table.Column<bool>(nullable: false)
                 },

@@ -19,12 +19,7 @@ namespace MSACSDegreePlanner.Controllers
             _context = context;
         }
 
-        // GET: Students
-        //public async Task<IActionResult> Index()
-        //{
-        //    return View(await _context.Students.ToListAsync());
-        //}
-        public async Task<IActionResult> Index(string sortOrder, string searchString)
+       public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["SnumberSortParm"] = sortOrder == "snumber_desc" ? "id_desc" : "snumber_desc";
@@ -120,7 +115,7 @@ namespace MSACSDegreePlanner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StudentId,LastName,FirstName,Snumber,_919number")] Student student)
+        public async Task<IActionResult> Edit(int id, [Bind("StudentId,LastName,FirstName,Snumber,_919number,Check")] Student student)
         {
             if (id != student.StudentId)
             {

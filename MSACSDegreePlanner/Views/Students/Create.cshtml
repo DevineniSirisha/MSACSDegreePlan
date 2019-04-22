@@ -37,10 +37,10 @@
                 <input asp-for="_919number" class="form-control" />
                 <span asp-validation-for="_919number" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Check" class="control-label"></label>
-                <input asp-for="Check" class="form-control" />
-                <span asp-validation-for="Check" class="text-danger"></span>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Check" /> @Html.DisplayNameFor(model => model.Check)
+                </label>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

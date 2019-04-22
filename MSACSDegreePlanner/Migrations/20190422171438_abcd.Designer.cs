@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MSACSDegreePlanner.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190405224240_Initial")]
-    partial class Initial
+    [Migration("20190422171438_abcd")]
+    partial class abcd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,9 +25,11 @@ namespace MSACSDegreePlanner.Migrations
                 {
                     b.Property<int>("DegreeId");
 
-                    b.Property<string>("DegreeAbbrev");
+                    b.Property<string>("DegreeAbbrev")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("DegreePlanName");
+                    b.Property<string>("DegreePlanName")
+                        .HasMaxLength(50);
 
                     b.HasKey("DegreeId");
 
@@ -101,9 +103,11 @@ namespace MSACSDegreePlanner.Migrations
                 {
                     b.Property<int>("RequirementId");
 
-                    b.Property<string>("RequirementAbbrev");
+                    b.Property<string>("RequirementAbbrev")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("RequirementName");
+                    b.Property<string>("RequirementName")
+                        .HasMaxLength(50);
 
                     b.HasKey("RequirementId");
 
@@ -116,11 +120,14 @@ namespace MSACSDegreePlanner.Migrations
 
                     b.Property<bool>("Check");
 
-                    b.Property<string>("FirstName");
+                    b.Property<string>("FirstName")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("LastName")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("Snumber");
+                    b.Property<string>("Snumber")
+                        .HasMaxLength(50);
 
                     b.Property<int>("_919number");
 
@@ -327,7 +334,7 @@ namespace MSACSDegreePlanner.Migrations
             modelBuilder.Entity("MSACSDegreePlanner.Models.DegreeRequirement", b =>
                 {
                     b.HasOne("MSACSDegreePlanner.Models.Degree", "Degree")
-                        .WithMany()
+                        .WithMany("DegreeRequirements")
                         .HasForeignKey("DegreeId")
                         .OnDelete(DeleteBehavior.Cascade);
 

@@ -9,31 +9,18 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-
-<form asp-action="Index" method="get">
-    <div class="form-actions no-color">
-        <p>
-            Find by name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
-            <input type="submit" value="Search" class="btn btn-default" /> |
-            <a asp-action="Index">Back to Full List</a>
-        </p>
-    </div>
-</form>
-
-
 <table class="table">
     <thead>
         <tr>
             <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["DegreeIdParm"]">@Html.DisplayNameFor(model => model.DegreeId)</a>
-</th>
+                @Html.DisplayNameFor(model => model.Degree)
+            </th>
             <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["RequirementIdParm"]">@Html.DisplayNameFor(model => model.RequirementId)</a>
-</th>
+                @Html.DisplayNameFor(model => model.Requirement)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Done)
             </th>
-                
             <th></th>
         </tr>
     </thead>
@@ -45,7 +32,7 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RequirementId)
-</td>
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Done)
             </td>

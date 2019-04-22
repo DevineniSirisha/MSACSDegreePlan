@@ -19,37 +19,37 @@ namespace MSACSDegreePlanner.Controllers
             _context = context;
         }
 
-        // GET: Requirements
-        public async Task<IActionResult> Index(string sortOrder, string searchString)
-        {
-            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
-            ViewData["CurrentFilter"] = searchString;
-            var requirements = from r in _context.Requirements
-                          select r;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                requirements = requirements.Where(r => r.RequirementAbbrev.Contains(searchString)
-                                       || r.RequirementName.Contains(searchString));
-            }
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    requirements = requirements.OrderByDescending(r => r.RequirementAbbrev);
-                    break;
-                case "Date":
-                    requirements = requirements.OrderBy(r =>r.RequirementName );
-                    break;
+		// GET: Requirements
+		public async Task<IActionResult> Index(string sortOrder, string searchString)
+		{
+			ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+			ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+			ViewData["CurrentFilter"] = searchString;
+			var requirements = from r in _context.Requirements
+							   select r;
+			if (!String.IsNullOrEmpty(searchString))
+			{
+				requirements = requirements.Where(r => r.RequirementAbbrev.Contains(searchString)
+									   || r.RequirementName.Contains(searchString));
+			}
+			switch (sortOrder)
+			{
+				case "name_desc":
+					requirements = requirements.OrderByDescending(r => r.RequirementAbbrev);
+					break;
+				case "Date":
+					requirements = requirements.OrderBy(r => r.RequirementName);
+					break;
 
-                default:
-                    requirements = requirements.OrderBy(r => r.RequirementAbbrev);
-                    break;
-            }
-            return View(await requirements.AsNoTracking().ToListAsync());
-        }
+				default:
+					requirements = requirements.OrderBy(r => r.RequirementAbbrev);
+					break;
+			}
+			return View(await requirements.AsNoTracking().ToListAsync());
+		}
 
-        // GET: Requirements/Details/5
-        public async Task<IActionResult> Details(int? id)
+		// GET: Requirements/Details/5
+		public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {

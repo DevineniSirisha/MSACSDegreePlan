@@ -19,45 +19,44 @@ namespace MSACSDegreePlanner.Controllers
             _context = context;
         }
 
-        // GET: DegreeRequirements
-        public async Task<IActionResult> Index(string sortOrder, string searchString)
-        {
-            ViewData["DegreeIdParm"] = String.IsNullOrEmpty(sortOrder) ? "DegreeId_desc" : "";
-            ViewData["RequirementIdParm"] = sortOrder == "RequirementId" ? "ReauirementId_desc" : "RequirementId";
-            ViewData["CurrentFilter"] = searchString;
+		// GET: DegreeRequirements
+		public async Task<IActionResult> Index(string sortOrder, string searchString)
+		{
+			ViewData["DegreeIdParm"] = String.IsNullOrEmpty(sortOrder) ? "DegreeId_desc" : "";
+			ViewData["RequirementIdParm"] = sortOrder == "RequirementId" ? "ReauirementId_desc" : "RequirementId";
+			ViewData["CurrentFilter"] = searchString;
 
-            var degreereq = from s in _context.DegreeRequirements
-                                    select s;
+			var degreereq = from s in _context.DegreeRequirements
+							select s;
 
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                degreereq = degreereq.Where(s => s.DegreeId.ToString().Contains(searchString)
-                                       || s.RequirementId.ToString().Contains(searchString));
-            }
+			if (!String.IsNullOrEmpty(searchString))
+			{
+				degreereq = degreereq.Where(s => s.DegreeId.ToString().Contains(searchString)
+									   || s.RequirementId.ToString().Contains(searchString));
+			}
 
-            switch (sortOrder)
-            {
-                case "DegreeId_desc":
-                    degreereq = degreereq.OrderByDescending(s => s.DegreeId);
-                    break;
-   
-                case "RequirementId":
-                    degreereq = degreereq.OrderBy(s => s.RequirementId);
-                    break;
-                case "ReauirementId_desc":
-                    degreereq = degreereq.OrderByDescending(s => s.RequirementId);
-                    break;
-                default:
-                    degreereq = degreereq.OrderBy(s => s.DegreeRequirementId);
-                    break;
-            }
+			switch (sortOrder)
+			{
+				case "DegreeId_desc":
+					degreereq = degreereq.OrderByDescending(s => s.DegreeId);
+					break;
 
-            return View(await degreereq.AsNoTracking().ToListAsync());
+				case "RequirementId":
+					degreereq = degreereq.OrderBy(s => s.RequirementId);
+					break;
+				case "ReauirementId_desc":
+					degreereq = degreereq.OrderByDescending(s => s.RequirementId);
+					break;
+				default:
+					degreereq = degreereq.OrderBy(s => s.DegreeRequirementId);
+					break;
+			}
 
-        }
+			return View(await degreereq.AsNoTracking().ToListAsync());
 
-        // GET: DegreeRequirements/Details/5
-        public async Task<IActionResult> Details(int? id)
+		}
+		// GET: DegreeRequirements/Details/5
+		public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -65,6 +64,8 @@ namespace MSACSDegreePlanner.Controllers
             }
 
             var degreeRequirement = await _context.DegreeRequirements
+                .Include(d => d.Degree)
+                .Include(d => d.Requirement)
                 .FirstOrDefaultAsync(m => m.DegreeRequirementId == id);
             if (degreeRequirement == null)
             {
@@ -73,13 +74,12 @@ namespace MSACSDegreePlanner.Controllers
 
             return View(degreeRequirement);
         }
-        
-        
 
         // GET: DegreeRequirements/Create
         public IActionResult Create()
         {
-            
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeId");
+            ViewData["RequirementId"] = new SelectList(_context.Requirements, "RequirementId", "RequirementId");
             return View();
         }
 
@@ -88,7 +88,7 @@ namespace MSACSDegreePlanner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DegreeRequirementId,DegreeId,RequirementId, Done")] DegreeRequirement degreeRequirement)
+        public async Task<IActionResult> Create([Bind("DegreeRequirementId,DegreeId,RequirementId,Done")] DegreeRequirement degreeRequirement)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,8 @@ namespace MSACSDegreePlanner.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-           
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeId", degreeRequirement.DegreeId);
+            ViewData["RequirementId"] = new SelectList(_context.Requirements, "RequirementId", "RequirementId", degreeRequirement.RequirementId);
             return View(degreeRequirement);
         }
 
@@ -113,7 +114,8 @@ namespace MSACSDegreePlanner.Controllers
             {
                 return NotFound();
             }
-            
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeId", degreeRequirement.DegreeId);
+            ViewData["RequirementId"] = new SelectList(_context.Requirements, "RequirementId", "RequirementId", degreeRequirement.RequirementId);
             return View(degreeRequirement);
         }
 
@@ -122,7 +124,7 @@ namespace MSACSDegreePlanner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DegreeRequirementId,DegreeId,RequirementId")] DegreeRequirement degreeRequirement)
+        public async Task<IActionResult> Edit(int id, [Bind("DegreeRequirementId,DegreeId,RequirementId,Done")] DegreeRequirement degreeRequirement)
         {
             if (id != degreeRequirement.DegreeRequirementId)
             {
@@ -149,7 +151,8 @@ namespace MSACSDegreePlanner.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-           
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeId", degreeRequirement.DegreeId);
+            ViewData["RequirementId"] = new SelectList(_context.Requirements, "RequirementId", "RequirementId", degreeRequirement.RequirementId);
             return View(degreeRequirement);
         }
 
@@ -162,6 +165,8 @@ namespace MSACSDegreePlanner.Controllers
             }
 
             var degreeRequirement = await _context.DegreeRequirements
+                .Include(d => d.Degree)
+                .Include(d => d.Requirement)
                 .FirstOrDefaultAsync(m => m.DegreeRequirementId == id);
             if (degreeRequirement == null)
             {
