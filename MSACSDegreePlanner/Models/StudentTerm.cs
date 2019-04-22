@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,13 +12,16 @@ namespace MSACSDegreePlanner.Models
     public class StudentTerm
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
+
+        [Required]
         public int StudentTermId { get; set; }
+
+        [ForeignKey("StudentId")]
         public int StudentId { get; set; }
         public int Term { get; set; }
         public string TermLabel { get; set; }
 
-        //public Student Student { get; set; }
-        //[ForeignKey("StudentID")]
+        public Student Student { get; set; }
 
         public bool Done { get; set; }
 
