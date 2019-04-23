@@ -101,6 +101,8 @@ namespace MSACSDegreePlanner.Migrations
                 {
                     b.Property<int>("RequirementId");
 
+                    b.Property<int>("DegreeId");
+
                     b.Property<string>("RequirementAbbrev")
                         .HasMaxLength(50);
 
@@ -108,6 +110,8 @@ namespace MSACSDegreePlanner.Migrations
                         .HasMaxLength(50);
 
                     b.HasKey("RequirementId");
+
+                    b.HasIndex("DegreeId");
 
                     b.ToTable("Requirement");
                 });
@@ -147,6 +151,8 @@ namespace MSACSDegreePlanner.Migrations
                     b.Property<string>("TermLabel");
 
                     b.HasKey("StudentTermId");
+
+                    b.HasIndex("StudentId");
 
                     b.ToTable("StudentTerm");
                 });
@@ -339,6 +345,22 @@ namespace MSACSDegreePlanner.Migrations
                     b.HasOne("MSACSDegreePlanner.Models.Requirement", "Requirement")
                         .WithMany()
                         .HasForeignKey("RequirementId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MSACSDegreePlanner.Models.Requirement", b =>
+                {
+                    b.HasOne("MSACSDegreePlanner.Models.Degree", "degree")
+                        .WithMany("Requirements")
+                        .HasForeignKey("DegreeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MSACSDegreePlanner.Models.StudentTerm", b =>
+                {
+                    b.HasOne("MSACSDegreePlanner.Models.Student", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

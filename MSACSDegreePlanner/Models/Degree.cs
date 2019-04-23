@@ -18,6 +18,7 @@ namespace MSACSDegreePlanner.Models
         [Display(Name = "Degree Plan Name")]
         public String DegreePlanName { get; set; }
 		public ICollection<DegreeRequirement> DegreeRequirements { get; set; }
+        public ICollection<Requirement> Requirements { get; set; }
     }
 
 }

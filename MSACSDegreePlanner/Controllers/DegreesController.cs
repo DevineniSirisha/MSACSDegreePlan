@@ -19,38 +19,14 @@ namespace MSACSDegreePlanner.Controllers
             _context = context;
         }
 
-		// GET: Degrees
-		public async Task<IActionResult> Index(string sortOrder, string searchString)
-		{
-			ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-			ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
-			ViewData["CurrentFilter"] = searchString;
+        // GET: Degrees
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Degrees.ToListAsync());
+        }
 
-			var degrees = from d in _context.Degrees
-						  select d;
-			if (!String.IsNullOrEmpty(searchString))
-			{
-				degrees = degrees.Where(d => d.DegreeAbbrev.Contains(searchString)
-									   || d.DegreePlanName.Contains(searchString));
-			}
-			switch (sortOrder)
-			{
-				case "name_desc":
-					degrees = degrees.OrderByDescending(d => d.DegreeAbbrev);
-					break;
-				case "Date":
-					degrees = degrees.OrderBy(d => d.DegreePlanName);
-					break;
-
-				default:
-					degrees = degrees.OrderBy(d => d.DegreeAbbrev);
-					break;
-			}
-			return View(await degrees.AsNoTracking().ToListAsync());
-		}
-
-		// GET: Degrees/Details/5
-		public async Task<IActionResult> Details(int? id)
+        // GET: Degrees/Details/5
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -58,7 +34,9 @@ namespace MSACSDegreePlanner.Controllers
             }
 
             var degree = await _context.Degrees
-                .FirstOrDefaultAsync(m => m.DegreeId == id);
+              .Include(d => d.Requirements)
+              .SingleOrDefaultAsync(m => m.DegreeId == id);
+
             if (degree == null)
             {
                 return NotFound();

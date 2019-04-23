@@ -42,19 +42,20 @@ namespace MSACSDegreePlanner.Data
 
                 var requirements = new Requirement[]
                {
-                   new Requirement{RequirementId=460,RequirementAbbrev="DB",RequirementName="44-460 Database"} ,
-                   new Requirement { RequirementId = 356, RequirementAbbrev = "NF", RequirementName = "44-356 Network Fundamemtals" },
-                   new Requirement { RequirementId = 542, RequirementAbbrev = "OOP", RequirementName = "44-542 OOP with Java" },
-                   new Requirement { RequirementId = 563, RequirementAbbrev = "Web apps", RequirementName = "44-563 Web apps" },
-                   new Requirement { RequirementId = 560, RequirementAbbrev = "ADB", RequirementName = "44-560 ADB" },
-                   new Requirement { RequirementId = 555, RequirementAbbrev = "NS", RequirementName = "44-555 Network Security" },
-                   new Requirement { RequirementId = 618, RequirementAbbrev = "PM", RequirementName = "44-618 PM" },
-                   new Requirement { RequirementId = 1, RequirementAbbrev = "Mobile", RequirementName = "44-643 or 44-644" },
-                   new Requirement { RequirementId = 664, RequirementAbbrev = "UX", RequirementName = "44-664 UX" },
-                   new Requirement { RequirementId = 10, RequirementAbbrev = "E1", RequirementName = "Elective 1" },
-                   new Requirement { RequirementId = 20, RequirementAbbrev = "E2", RequirementName = "Elective 2" },
-                   new Requirement { RequirementId = 691, RequirementAbbrev = "GDP1", RequirementName = "GDP1" },
-                   new Requirement { RequirementId = 692, RequirementAbbrev = "GDP2", RequirementName = "GDP2" }
+                   new Requirement{RequirementId=460,RequirementAbbrev="DB",RequirementName="44-460 Database",DegreeId=1},
+new Requirement{RequirementId=356,RequirementAbbrev="NF",RequirementName="44-356 Network Fundamemtals",DegreeId=1},
+new Requirement{RequirementId=542,RequirementAbbrev="OOP",RequirementName="44-542 OOP with Java",DegreeId=1},
+new Requirement{RequirementId=563,RequirementAbbrev="Web apps",RequirementName="44-563 Web apps",DegreeId=1},
+new Requirement{RequirementId=560,RequirementAbbrev="ADB",RequirementName="44-560 ADB",DegreeId=1},
+new Requirement{RequirementId=555,RequirementAbbrev="NS",RequirementName="44-555 Network Security",DegreeId=1},
+new Requirement{RequirementId=618,RequirementAbbrev="PM",RequirementName="44-618 PM",DegreeId=1},
+new Requirement{RequirementId=1,RequirementAbbrev="Mobile",RequirementName="44-643 or 44-644",DegreeId=1},
+new Requirement{RequirementId=664,RequirementAbbrev="UX",RequirementName="44-664 UX",DegreeId=1},
+new Requirement{RequirementId=10,RequirementAbbrev="E1",RequirementName="Elective 1",DegreeId=1},
+new Requirement{RequirementId=20,RequirementAbbrev="E2",RequirementName="Elective 2",DegreeId=1},
+new Requirement{RequirementId=691,RequirementAbbrev="GDP1",RequirementName="GDP1",DegreeId=1},
+new Requirement{RequirementId=692,RequirementAbbrev="GDP2",RequirementName="GDP2",DegreeId=1}
+
 
                };
                 Console.WriteLine($"Inserted {requirements.Length} new requirements");

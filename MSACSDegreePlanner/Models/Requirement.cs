@@ -17,5 +17,7 @@ namespace MSACSDegreePlanner.Models
         [StringLength(50, MinimumLength = 3)]
         [Display(Name = "Requirement Name")]
         public String RequirementName { get; set; }
+        public int DegreeId { get; set; }
+        public Degree degree { get; set; }
     }
 }
