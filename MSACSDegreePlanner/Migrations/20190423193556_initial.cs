@@ -282,7 +282,8 @@ namespace MSACSDegreePlanner.Migrations
                         name: "FK_DegreeRequirement_Degree_DegreeId",
                         column: x => x.DegreeId,
                         principalTable: "Degree",
-                        principalColumn: "DegreeId");
+                        principalColumn: "DegreeId",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_DegreeRequirement_Requirement_RequirementId",
                         column: x => x.RequirementId,

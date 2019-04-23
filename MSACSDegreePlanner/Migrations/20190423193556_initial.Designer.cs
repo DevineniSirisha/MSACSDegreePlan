@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MSACSDegreePlanner.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190423190733_initial")]
+    [Migration("20190423193556_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -332,7 +332,7 @@ namespace MSACSDegreePlanner.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("MSACSDegreePlanner.Models.Student", "Student")
-                        .WithMany()
+                        .WithMany("DegreePlans")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

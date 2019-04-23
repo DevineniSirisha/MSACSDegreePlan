@@ -22,5 +22,7 @@ namespace MSACSDegreePlanner.Models
         public string Snumber { get; set; }
         public int _919number { get; set; }
         public bool Check { get; set; }
-    }
+    public ICollection<DegreePlan> DegreePlans { get; set; }
+
+}
 }

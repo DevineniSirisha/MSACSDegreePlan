@@ -330,7 +330,7 @@ namespace MSACSDegreePlanner.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("MSACSDegreePlanner.Models.Student", "Student")
-                        .WithMany()
+                        .WithMany("DegreePlans")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
