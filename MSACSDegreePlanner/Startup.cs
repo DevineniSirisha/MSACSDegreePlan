@@ -37,7 +37,7 @@ namespace MSACSDegreePlanner
             });
 
             // Use SQL Database if in Azure, otherwise, use local
-            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
             {
                services.AddDbContext<ApplicationDbContext>(options => 
                options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
