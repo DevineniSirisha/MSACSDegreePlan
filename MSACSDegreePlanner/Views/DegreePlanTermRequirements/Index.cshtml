@@ -16,10 +16,10 @@
                 @Html.DisplayNameFor(model => model.DegreePlanId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TermId)
+                @Html.DisplayNameFor(model => model.Requirement)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RequirementId)
+                @Html.DisplayNameFor(model => model.StudentTerm)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Done)
@@ -34,10 +34,10 @@
                 @Html.DisplayFor(modelItem => item.DegreePlanId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TermId)
+                @Html.DisplayFor(modelItem => item.Requirement.RequirementId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RequirementId)
+                @Html.DisplayFor(modelItem => item.StudentTerm.StudentTermId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Done)

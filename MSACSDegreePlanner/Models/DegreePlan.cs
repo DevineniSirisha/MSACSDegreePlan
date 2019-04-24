@@ -19,6 +19,7 @@ namespace MSACSDegreePlanner.Models
         [ForeignKey("StudentId")]
         public int StudentId { get; set; }
 
+
         [Required]
         [StringLength(30, MinimumLength = 3)]
         [Display(Name = "DegreePlanAbrev")]
@@ -30,9 +31,10 @@ namespace MSACSDegreePlanner.Models
         public String DegreePlanName { get; set; }
 
         public bool Check { get; set; }
-
+        public ICollection<StudentTerm> StudentTerms { get; set; }
         //Navigation Properties
         public Degree Degree { get; set; }
         public Student Student { get; set; }
+
     }
 }

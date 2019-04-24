@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MSACSDegreePlanner.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190423193556_initial")]
+    [Migration("20190424011420_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -73,9 +73,13 @@ namespace MSACSDegreePlanner.Migrations
 
                     b.Property<int>("RequirementId");
 
-                    b.Property<int>("TermId");
+                    b.Property<int>("StudentTermId");
 
                     b.HasKey("DegreePlanTermRequirementId");
+
+                    b.HasIndex("RequirementId");
+
+                    b.HasIndex("StudentTermId");
 
                     b.ToTable("DegreePlanTermRequirement");
                 });
@@ -144,6 +148,8 @@ namespace MSACSDegreePlanner.Migrations
                 {
                     b.Property<int>("StudentTermId");
 
+                    b.Property<int>("DegreePlanId");
+
                     b.Property<bool>("Done");
 
                     b.Property<int>("StudentId");
@@ -153,6 +159,8 @@ namespace MSACSDegreePlanner.Migrations
                     b.Property<string>("TermLabel");
 
                     b.HasKey("StudentTermId");
+
+                    b.HasIndex("DegreePlanId");
 
                     b.HasIndex("StudentId");
 
@@ -337,6 +345,19 @@ namespace MSACSDegreePlanner.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("MSACSDegreePlanner.Models.DegreePlanTermRequirement", b =>
+                {
+                    b.HasOne("MSACSDegreePlanner.Models.Requirement", "Requirement")
+                        .WithMany()
+                        .HasForeignKey("RequirementId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MSACSDegreePlanner.Models.StudentTerm", "StudentTerm")
+                        .WithMany("DegreePlanTermRequirements")
+                        .HasForeignKey("StudentTermId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("MSACSDegreePlanner.Models.DegreeRequirement", b =>
                 {
                     b.HasOne("MSACSDegreePlanner.Models.Degree", "Degree")
@@ -360,6 +381,11 @@ namespace MSACSDegreePlanner.Migrations
 
             modelBuilder.Entity("MSACSDegreePlanner.Models.StudentTerm", b =>
                 {
+                    b.HasOne("MSACSDegreePlanner.Models.DegreePlan", "DegreePlan")
+                        .WithMany("StudentTerms")
+                        .HasForeignKey("DegreePlanId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("MSACSDegreePlanner.Models.Student", "Student")
                         .WithMany()
                         .HasForeignKey("StudentId")
