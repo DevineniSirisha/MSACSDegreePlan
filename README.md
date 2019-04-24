@@ -59,6 +59,10 @@ DegreePlan Index
 - **Dristi Marisini**  
 - **Aawaj Joshi**  
 
+
+![Team](https://user-images.githubusercontent.com/31771293/56687973-1b929280-669d-11e9-909b-7f91fb731345.PNG)
+
+
 ## Cost Estimation for our application
 
 | take-home hourly rate 	| Price 	|
