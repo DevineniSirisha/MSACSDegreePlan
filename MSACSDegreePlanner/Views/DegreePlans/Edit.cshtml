@@ -20,12 +20,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="DegreePlanId" />
             <div class="form-group">
-                <label asp-for="StudentId" class="control-label"></label>
+                <label  class="control-label">StudentName</label>
                 <select asp-for="StudentId" class="form-control" asp-items="ViewBag.StudentId"></select>
                 <span asp-validation-for="StudentId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DegreeId" class="control-label"></label>
+                <label class="control-label">DegreeName</label>
                 <select asp-for="DegreeId" class="form-control" asp-items="ViewBag.DegreeId"></select>
                 <span asp-validation-for="DegreeId" class="text-danger"></span>
             </div>
@@ -101,7 +101,7 @@
             </div>
         </div>
     </div>
-
+    </div>
     <div>
         <a asp-action="Index">Back to List</a>
     </div>
@@ -116,6 +116,12 @@
         const t4Element = document.getElementById('term4')
         const t5Element = document.getElementById('term5')
         const t6Element = document.getElementById('term6')
+        const t7Element = document.getElementById('term7')
+        const t8Element = document.getElementById('term8')
+        const t9Element = document.getElementById('term9')
+        const t10Element = document.getElementById('term10')
+        const t11Element = document.getElementById('term11')
+        const t12Element = document.getElementById('term12')
 
         new Sortable(reqElement, {
             group: {
@@ -186,6 +192,67 @@
             swapThreshold: 0.65,
             ghostClass: 'blue-background-class'
         });
+
+        new Sortable(t7Element, {
+            group: {
+                name: 'shared'
+            },
+            animation: 150,
+            fallbackOnBody: true,
+            swapThreshold: 0.65,
+            ghostClass: 'blue-background-class'
+        });
+
+        new Sortable(t8Element, {
+            group: {
+                name: 'shared'
+            },
+            animation: 150,
+            fallbackOnBody: true,
+            swapThreshold: 0.65,
+            ghostClass: 'blue-background-class'
+        });
+
+        new Sortable(t9Element, {
+            group: {
+                name: 'shared'
+            },
+            animation: 150,
+            fallbackOnBody: true,
+            swapThreshold: 0.65,
+            ghostClass: 'blue-background-class'
+        });
+
+        new Sortable(t10Element, {
+            group: {
+                name: 'shared'
+            },
+            animation: 150,
+            fallbackOnBody: true,
+            swapThreshold: 0.65,
+            ghostClass: 'blue-background-class'
+        });
+
+        new Sortable(t11Element, {
+            group: {
+                name: 'shared'
+            },
+            animation: 150,
+            fallbackOnBody: true,
+            swapThreshold: 0.65,
+            ghostClass: 'blue-background-class'
+        });
+
+        new Sortable(t12Element, {
+            group: {
+                name: 'shared'
+            },
+            animation: 150,
+            fallbackOnBody: true,
+            swapThreshold: 0.65,
+            ghostClass: 'blue-background-class'
+        });
+
 
     </script>
 
